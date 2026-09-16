@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <!-- Dark Enterprise Canvas -->
+  <rect width="1200" height="630" fill="#090d16"/>
+  
+  <!-- Subtle Architectural Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f59e0b" stop-opacity="0.12"/>
+      <stop offset="0.5" stop-color="#10b981" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#090d16" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="accentGold" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Grids & Radial Ambience -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow)"/>
+  
+  <!-- Border Accent -->
+  <rect x="24" y="24" width="1152" height="582" rx="16" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6"/>
+  
+  <!-- Brand Sentinel Crest -->
+  <g transform="translate(100, 100)">
+    <rect width="72" height="72" rx="18" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <path d="M36 12L52 28H20L36 12Z" fill="url(#accentGold)"/>
+    <circle cx="36" cy="36" r="5" fill="#10b981"/>
+    <circle cx="36" cy="36" r="2" fill="#ffffff"/>
+    <path d="M20 44H52L56 60H16L20 44Z" fill="#334155"/>
+    <rect x="34" y="48" width="4" height="12" rx="1" fill="#f59e0b"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="195" y="142" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="700" fill="#f8fafc" letter-spacing="-0.5">
+    Nharire Intelligence
+  </text>
+  
+  <!-- Entity Badge -->
+  <g transform="translate(465, 120)">
+    <rect width="180" height="28" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-opacity="0.4"/>
+    <text x="90" y="18" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#fbbf24" letter-spacing="1">
+      NHARIRE DATA GROUP
+    </text>
+  </g>
+
+  <!-- Tagline / Motto -->
+  <text x="100" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#ffffff" letter-spacing="-1">
+    See Further. Know More. Decide Better.
+  </text>
+
+  <!-- Value Proposition Paragraph -->
+  <text x="100" y="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400" fill="#94a3b8">
+    African-first Data &amp; AI Intelligence SaaS Platform for High-Growth Enterprises
+  </text>
+  
+  <text x="100" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="400" fill="#64748b">
+    Automated dataset profiling, regional FMCG telemetry, and verified grounded AI analytics.
+  </text>
+
+  <!-- Feature Telemetry Chips -->
+  <g transform="translate(100, 420)">
+    <!-- Chip 1 -->
+    <rect x="0" y="0" width="220" height="56" rx="10" fill="#0f172a" stroke="#334155"/>
+    <circle cx="28" cy="28" r="8" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="28" cy="28" r="4" fill="#10b981"/>
+    <text x="48" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">DATA QUALITY INDEX</text>
+    <text x="48" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">94/100 Verified</text>
+
+    <!-- Chip 2 -->
+    <rect x="240" y="0" width="250" height="56" rx="10" fill="#0f172a" stroke="#334155"/>
+    <circle cx="268" cy="28" r="8" fill="#f59e0b" fill-opacity="0.2"/>
+    <circle cx="268" cy="28" r="4" fill="#f59e0b"/>
+    <text x="288" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">GROUNDED AI ANALYST</text>
+    <text x="288" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Zero Hallucinations</text>
+
+    <!-- Chip 3 -->
+    <rect x="510" y="0" width="260" height="56" rx="10" fill="#0f172a" stroke="#334155"/>
+    <circle cx="538" cy="28" r="8" fill="#38bdf8" fill-opacity="0.2"/>
+    <circle cx="538" cy="28" r="4" fill="#38bdf8"/>
+    <text x="558" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">SOVEREIGN COMPLIANCE</text>
+    <text x="558" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">POPIA / GDPR Aligned</text>
+  </g>
+
+  <!-- Footer Meta -->
+  <g transform="translate(100, 530)">
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0">
+      Harare • Johannesburg • Nairobi
+    </text>
+    <text x="1000" y="20" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" fill="#fbbf24">
+      nharire.com
+    </text>
+  </g>
+</svg>

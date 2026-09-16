@@ -1,0 +1,20 @@
+# Nharire Intelligence Robots Configuration
+# https://nharire.com
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /platform
+Allow: /solutions
+Allow: /case-studies
+Allow: /faq
+Allow: /contact
+Allow: /privacy-policy
+
+# Disallow internal application API routes and telemetry endpoints
+Disallow: /api/
+Disallow: /_next/
+Disallow: /dist/
+
+# Host and Sitemap declaration
+Sitemap: https://nharire.com/sitemap.xml

@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Header } from './components/Header';
-import { Sidebar, ActiveTab } from './components/Sidebar';
-import { DatasetManager } from './components/DatasetManager';
-import { DatasetProfiler } from './components/DatasetProfiler';
-import { AnalyticsDashboard } from './components/AnalyticsDashboard';
-import { AskAIAnalyst } from './components/AskAIAnalyst';
-import { ReportsView } from './components/ReportsView';
-import { ArchitectureView } from './components/ArchitectureView';
-import { CreateModal } from './components/CreateModal';
+import { RouterProvider, useRouter } from './context/RouterContext';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { MobileStickyCta } from './components/MobileStickyCta';
+
+// Pages
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { PlatformPage } from './pages/PlatformPage';
+import { SolutionsPage } from './pages/SolutionsPage';
+import { CaseStudiesPage } from './pages/CaseStudiesPage';
+import { FaqPage } from './pages/FaqPage';
+import { ContactPage } from './pages/ContactPage';
+import { ThankYouPage } from './pages/ThankYouPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+
+// Types
 import { Organization, Workspace, Dataset } from './types';
 
-export function App() {
+function AppContent() {
+  const { currentPath } = useRouter();
+
+  // Core Platform Data State
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [selectedOrg, setSelectedOrg] = useState<Organization | null>(null);
 
@@ -20,9 +32,6 @@ export function App() {
 
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [selectedDataset, setSelectedDataset] = useState<Dataset | null>(null);
-
-  const [activeTab, setActiveTab] = useState<ActiveTab>('datasets');
-  const [createModalType, setCreateModalType] = useState<'org' | 'ws' | null>(null);
   const [loading, setLoading] = useState(true);
 
   // Initial load: Organizations & Workspaces
@@ -103,7 +112,6 @@ export function App() {
       const res = await fetch(`/api/datasets?workspaceId=${wsId}`);
       if (res.ok) {
         const data: Dataset[] = await res.json();
-        // If empty, also fall back to all datasets so user always has rich data to explore
         if (data.length === 0) {
           loadAllDatasets();
         } else {
@@ -135,7 +143,6 @@ export function App() {
       const created = await res.json();
       setDatasets(prev => [created, ...prev]);
       setSelectedDataset(created);
-      setActiveTab('profiler');
     }
   };
 
@@ -151,129 +158,83 @@ export function App() {
     }
   };
 
-  // Create Org handler
-  const handleCreateOrg = async (name: string, plan: 'Starter' | 'Pro' | 'Enterprise') => {
-    const res = await fetch('/api/organizations', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, plan }),
-    });
-    if (res.ok) {
-      const newOrg = await res.json();
-      setOrganizations(prev => [...prev, newOrg]);
-      handleSelectOrg(newOrg);
-    }
-  };
+  // Route matching helper
+  const renderCurrentPage = () => {
+    // Normalise pathname
+    const path = currentPath.toLowerCase().replace(/\/$/, '') || '/';
 
-  // Create Ws handler
-  const handleCreateWs = async (orgId: string, name: string, description: string) => {
-    const res = await fetch('/api/workspaces', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ organizationId: orgId, name, description }),
-    });
-    if (res.ok) {
-      const newWs = await res.json();
-      setWorkspaces(prev => [...prev, newWs]);
-      setSelectedWs(newWs);
+    switch (path) {
+      case '/':
+        return <HomePage />;
+      case '/about':
+        return <AboutPage />;
+      case '/platform':
+        return (
+          <PlatformPage
+            organizations={organizations}
+            selectedOrg={selectedOrg}
+            onSelectOrg={handleSelectOrg}
+            workspaces={workspaces}
+            selectedWs={selectedWs}
+            onSelectWs={setSelectedWs}
+            datasets={datasets}
+            selectedDataset={selectedDataset}
+            onSelectDataset={setSelectedDataset}
+            onUploadDataset={handleUploadDataset}
+            onDeleteDataset={handleDeleteDataset}
+          />
+        );
+      case '/solutions':
+        return <SolutionsPage />;
+      case '/case-studies':
+        return <CaseStudiesPage />;
+      case '/faq':
+        return <FaqPage />;
+      case '/contact':
+        return <ContactPage />;
+      case '/thank-you':
+        return <ThankYouPage />;
+      case '/privacy-policy':
+        return <PrivacyPolicyPage />;
+      default:
+        return <NotFoundPage />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col antialiased">
-      {/* Top Application Header with Organization & Workspace Selectors */}
-      <Header
-        organizations={organizations}
-        selectedOrg={selectedOrg}
-        onSelectOrg={handleSelectOrg}
-        workspaces={workspaces}
-        selectedWs={selectedWs}
-        onSelectWs={setSelectedWs}
-        datasets={datasets}
-        selectedDataset={selectedDataset}
-        onSelectDataset={setSelectedDataset}
-        onOpenCreateModal={(type) => {
-          if (type === 'dataset') {
-            setActiveTab('datasets');
-          } else {
-            setCreateModalType(type);
-          }
-        }}
-      />
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200">
+      {/* Top Universal Navbar */}
+      <Navbar />
 
-      {/* Main App Body */}
-      <div className="flex-1 flex flex-col md:flex-row max-w-7xl w-full mx-auto">
-        {/* Navigation Sidebar */}
-        <Sidebar
-          activeTab={activeTab}
-          onChangeTab={setActiveTab}
-          datasetCount={datasets.length}
-          healthScore={selectedDataset?.validation?.healthScore}
-        />
+      {/* Main Page Dynamic Outlet with Smooth Motion Transition */}
+      <main className="flex-1 pb-16 md:pb-0" id="main-content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPath}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.2 }}
+          >
+            {renderCurrentPage()}
+          </motion.div>
+        </AnimatePresence>
+      </main>
 
-        {/* Tab Content Panel */}
-        <main className="flex-1 p-5 md:p-8 overflow-y-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab + (selectedDataset?.id || 'none')}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.15 }}
-            >
-              {activeTab === 'datasets' && (
-                <DatasetManager
-                  datasets={datasets}
-                  selectedDataset={selectedDataset}
-                  onSelectDataset={setSelectedDataset}
-                  onUploadDataset={handleUploadDataset}
-                  onDeleteDataset={handleDeleteDataset}
-                  onNavigateTab={(tab) => setActiveTab(tab as any)}
-                />
-              )}
+      {/* Bottom Enterprise Footer */}
+      <Footer />
 
-              {activeTab === 'profiler' && (
-                <DatasetProfiler
-                  dataset={selectedDataset}
-                  onNavigateToDashboard={() => setActiveTab('dashboard')}
-                  onNavigateToAi={() => setActiveTab('ai-analyst')}
-                />
-              )}
-
-              {activeTab === 'dashboard' && (
-                <AnalyticsDashboard
-                  dataset={selectedDataset}
-                  onNavigateToAi={() => setActiveTab('ai-analyst')}
-                />
-              )}
-
-              {activeTab === 'ai-analyst' && (
-                <AskAIAnalyst dataset={selectedDataset} />
-              )}
-
-              {activeTab === 'reports' && (
-                <ReportsView dataset={selectedDataset} />
-              )}
-
-              {activeTab === 'architecture' && (
-                <ArchitectureView />
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </main>
-      </div>
-
-      {/* Modal for creating Org or Workspace */}
-      <CreateModal
-        type={createModalType || 'ws'}
-        isOpen={createModalType !== null}
-        onClose={() => setCreateModalType(null)}
-        organizations={organizations}
-        selectedOrg={selectedOrg}
-        onCreateOrg={handleCreateOrg}
-        onCreateWs={handleCreateWs}
-      />
+      {/* Mobile Sticky CTA */}
+      <MobileStickyCta />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
   );
 }
 

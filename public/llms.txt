@@ -1,0 +1,29 @@
+# Nharire Intelligence
+
+> African-first Data & AI Intelligence SaaS Platform for High-Growth Enterprises by Nharire Data Group.
+> Tagline: See Further. Know More. Decide Better.
+
+Nharire Intelligence is an enterprise Data & AI SaaS platform developed by Nharire Data Group (Harare, Zimbabwe). Engineered specifically for African commercial environments, Nharire Intelligence addresses multi-currency volatility, informal market retail distribution, and fragmented supply chains through sovereign data infrastructure.
+
+## Core Capabilities
+
+- **Data Validation & Quality Profiling**: Automated ingestion of point-of-sale dumps, ERP extracts, mobile money ledgers, and operational CSV/JSON records. Evaluates schema cleanliness, detects outliers and anomalies, measures null rates, flags duplicate records, and computes a deterministic 0–100 Data Health Index.
+- **Enterprise & Regional Telemetry**: Real-time operational monitoring and executive telemetry dashboards tailored for African trade corridors. Tracks SKU reorder velocity, cash versus mobile money distribution, regional FMCG depots, cold-chain temperature thresholds, and provincial performance across Southern and East Africa.
+- **Grounded AI Analysis ("Ask Nharire")**: Zero-hallucination generative AI analysis powered by a deterministic two-tier pipeline. All numerical aggregations, sums, variances, and percentages are pre-computed server-side before synthesis, ensuring strict mathematical truth for executive and board decision-making.
+- **Sovereign Data Governance & Security**: Strict tenant isolation across organizations and departmental workspaces. Customer data is protected with AES-256 encryption at rest, TLS 1.3 in transit, and is never used to train public foundational AI models. Compliant with Zimbabwe Cyber & Data Protection Act, South Africa POPIA, Kenya DPA, and European GDPR.
+
+## Primary Public Pages
+
+- [Homepage](https://nharire.com/): Value proposition, platform preview, African commerce market reality, and enterprise entry points.
+- [About Nharire Data Group](https://nharire.com/about): Corporate heritage, sentinel philosophy, mission, vision, African-first technology positioning, and leadership.
+- [Platform Architecture & Workbench](https://nharire.com/platform): End-to-end 5-layer data pipeline specifications and interactive live intelligence sandbox.
+- [Enterprise Solutions](https://nharire.com/solutions): Tailored industry architectures for Retail & FMCG distribution, Agri-Logistics & cold chain, Financial Services & alternative credit, Decentralized Utilities, and Essential Commodities.
+- [Case Studies & Benchmarks](https://nharire.com/case-studies): Field benchmarks and demonstrated ROI metrics from pilot deployments across Southern and East African supply chains.
+- [Frequently Asked Questions (FAQ)](https://nharire.com/faq): Technical and operational answers regarding data security, integration connectors, APIs, and onboarding.
+- [Contact Enterprise Desk](https://nharire.com/contact): Direct lead capture, technical briefing inquiries, and service level response guarantee (1 business day).
+- [Privacy Policy & Data Sovereignty](https://nharire.com/privacy-policy): Transparent disclosure of data handling, tenant isolation, zero-model-training guarantees, and statutory compliance.
+
+## Optional Resources
+
+- [Sitemap](https://nharire.com/sitemap.xml): XML sitemap listing canonical indexable URLs.
+- [Robots Configuration](https://nharire.com/robots.txt): Crawler rules and sitemap location.

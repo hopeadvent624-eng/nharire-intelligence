@@ -1,151 +1,234 @@
-import React from 'react';
-import { Building2, Layers, Database, ShieldCheck, ChevronDown, Plus, Sparkles } from 'lucide-react';
-import { Organization, Workspace, Dataset } from '../types';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, ArrowRight, ChevronRight, ShieldCheck } from 'lucide-react';
+import { useRouter } from '../context/RouterContext';
 
-interface HeaderProps {
-  organizations: Organization[];
-  selectedOrg: Organization | null;
-  onSelectOrg: (org: Organization) => void;
-  workspaces: Workspace[];
-  selectedWs: Workspace | null;
-  onSelectWs: (ws: Workspace) => void;
-  datasets: Dataset[];
-  selectedDataset: Dataset | null;
-  onSelectDataset: (ds: Dataset) => void;
-  onOpenCreateModal: (type: 'org' | 'ws' | 'dataset') => void;
+export interface HeaderProps {
+  className?: string;
+  onGetStarted?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  organizations,
-  selectedOrg,
-  onSelectOrg,
-  workspaces,
-  selectedWs,
-  onSelectWs,
-  datasets,
-  selectedDataset,
-  onSelectDataset,
-  onOpenCreateModal,
-}) => {
+export const Header: React.FC<HeaderProps> = ({ className = '', onGetStarted }) => {
+  const { currentPath, navigate } = useRouter();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile drawer when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [currentPath]);
+
+  // Close mobile drawer on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
+  const navLinks = [
+    { label: 'Platform', href: '/platform', id: 'header-link-platform' },
+    { label: 'Solutions', href: '/solutions', id: 'header-link-solutions' },
+    { label: 'Case Studies', href: '/case-studies', id: 'header-link-casestudies' },
+    { label: 'About', href: '/about', id: 'header-link-about' },
+    { label: 'FAQ', href: '/faq', id: 'header-link-faq' },
+    { label: 'Contact', href: '/contact', id: 'header-link-contact' },
+  ];
+
+  const handleNavClick = (href: string) => {
+    navigate(href);
+    setMobileMenuOpen(false);
+  };
+
+  const handleGetStartedClick = () => {
+    if (onGetStarted) {
+      onGetStarted();
+    } else {
+      navigate('/platform');
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <header id="app-header" className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md px-5 py-3 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        {/* Left: Brand & Tagline */}
-        <div className="flex items-center gap-4">
+    <header
+      id="main-header"
+      role="banner"
+      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-all shadow-xs ${className}`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-18 sm:h-20">
+          
+          {/* Logo & Brand Identity */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-md shadow-amber-950/40 text-slate-950 font-bold text-lg">
-              <span>N</span>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-100 tracking-tight text-base">Nharire Intelligence</span>
-                <span className="text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">
-                  Data Group
-                </span>
+            <button
+              id="header-logo-button"
+              onClick={() => handleNavClick('/')}
+              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 rounded-xl p-1 text-left transition-transform active:scale-[0.99]"
+              aria-label="Nharire Intelligence Homepage"
+            >
+              {/* Nharire Watchtower Crest Emblem */}
+              <div
+                id="header-logo-icon"
+                className="w-10 h-10 rounded-xl bg-[#0B5D3B] flex items-center justify-center shadow-md shadow-[#0B5D3B]/20 group-hover:bg-[#08482e] transition-colors relative overflow-hidden"
+              >
+                <svg
+                  className="w-6 h-6"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path d="M20 7L30 15H10L20 7Z" fill="#22C55E" />
+                  <rect x="13.5" y="15" width="13" height="7" rx="1.5" fill="#FFFFFF" />
+                  <circle cx="20" cy="18.5" r="2.5" fill="#0B5D3B" />
+                  <circle cx="20" cy="18.5" r="1" fill="#22C55E" />
+                  <path d="M11 23H29L32 33H8L11 23Z" fill="#DCFCE7" />
+                  <rect x="18.5" y="25" width="3" height="8" rx="1" fill="#0B5D3B" />
+                </svg>
               </div>
-              <p className="text-[11px] text-slate-400 hidden sm:block font-medium">
-                See Further. Know More. Decide Better.
-              </p>
-            </div>
+
+              {/* Logo Typography */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span
+                    id="header-logo-text"
+                    className="font-extrabold text-[#111827] tracking-tight text-lg sm:text-xl group-hover:text-[#0B5D3B] transition-colors"
+                  >
+                    Nharire Intelligence
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#0B5D3B] bg-[#DCFCE7] px-1.5 py-0.5 rounded-sm">
+                    Nharire Data Group
+                  </span>
+                  <span className="text-[11px] text-[#6B7280] hidden xl:inline font-medium">
+                    • African-First Data &amp; AI
+                  </span>
+                </div>
+              </div>
+            </button>
           </div>
 
-          <div className="hidden lg:block h-6 w-px bg-slate-800" />
+          {/* Desktop Navigation Links */}
+          <nav
+            id="header-desktop-nav"
+            className="hidden lg:flex items-center space-x-1"
+            aria-label="Main Navigation"
+          >
+            {navLinks.map((link) => {
+              const isActive = currentPath === link.href;
+              return (
+                <button
+                  key={link.label}
+                  id={link.id}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/20 ${
+                    isActive
+                      ? 'text-[#0B5D3B] bg-[#DCFCE7] shadow-2xs font-bold'
+                      : 'text-[#4B5563] hover:text-[#111827] hover:bg-[#F1F5F9]'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
+          </nav>
 
-          {/* Org & Workspace Selectors */}
-          <div className="flex items-center gap-2">
-            {/* Organization Selector */}
-            <div className="relative group">
-              <select
-                id="org-selector"
-                value={selectedOrg?.id || ''}
-                onChange={(e) => {
-                  const found = organizations.find((o) => o.id === e.target.value);
-                  if (found) onSelectOrg(found);
-                }}
-                aria-label="Select Organization"
-                className="appearance-none bg-slate-800/80 border border-slate-700 hover:border-slate-600 rounded-md py-1.5 pl-8 pr-7 text-xs font-medium text-slate-200 cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500"
-              >
-                {organizations.map((org) => (
-                  <option key={org.id} value={org.id} className="bg-slate-900 text-slate-200">
-                    {org.name} ({org.plan})
-                  </option>
-                ))}
-              </select>
-              <Building2 className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-              <ChevronDown className="w-3 h-3 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            </div>
-
-            {/* Workspace Selector */}
-            <div className="relative group">
-              <select
-                id="workspace-selector"
-                value={selectedWs?.id || ''}
-                onChange={(e) => {
-                  const found = workspaces.find((w) => w.id === e.target.value);
-                  if (found) onSelectWs(found);
-                }}
-                aria-label="Select Workspace"
-                className="appearance-none bg-slate-800/80 border border-slate-700 hover:border-slate-600 rounded-md py-1.5 pl-8 pr-7 text-xs font-medium text-slate-200 cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-500"
-              >
-                {workspaces.map((ws) => (
-                  <option key={ws.id} value={ws.id} className="bg-slate-900 text-slate-200">
-                    {ws.name}
-                  </option>
-                ))}
-              </select>
-              <Layers className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-              <ChevronDown className="w-3 h-3 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            </div>
+          {/* Desktop Right Action Area: Contact Quick Link & 'Get Started' Primary CTA */}
+          <div className="hidden sm:flex items-center gap-3">
+            <button
+              id="header-contact-link-desktop"
+              onClick={() => handleNavClick('/contact')}
+              className="hidden lg:inline-flex text-sm font-semibold text-[#4B5563] hover:text-[#0B5D3B] px-3.5 py-2 rounded-xl hover:bg-[#F1F5F9] transition-colors"
+            >
+              Talk to Us
+            </button>
 
             <button
-              id="btn-add-workspace"
-              onClick={() => onOpenCreateModal('ws')}
-              title="Create new workspace"
-              className="p-1.5 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition-colors"
+              id="header-get-started-btn"
+              onClick={handleGetStartedClick}
+              className="inline-flex items-center gap-2 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow-sm hover:shadow-md hover:shadow-[#0B5D3B]/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 active:scale-[0.99]"
             >
-              <Plus className="w-3.5 h-3.5" />
+              <span>Get Started</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Mobile Hamburger Toggle */}
+          <div className="flex lg:hidden items-center gap-2">
+            <button
+              id="header-mobile-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2.5 rounded-xl bg-[#F8FAFC] border border-[#E5E7EB] text-[#111827] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="header-mobile-drawer"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#111827]" /> : <Menu className="w-5 h-5 text-[#111827]" />}
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div
+          id="header-mobile-drawer"
+          className="lg:hidden border-b border-[#E5E7EB] bg-white px-4 pt-3 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-150"
+        >
+          {/* Trust indicator banner in mobile menu */}
+          <div className="flex items-center gap-2 px-3.5 py-2 mb-3 rounded-lg bg-[#DCFCE7]/60 text-[#0B5D3B] text-xs font-semibold">
+            <ShieldCheck className="w-4 h-4 shrink-0 text-[#16A34A]" />
+            <span>African-First Data &amp; AI Intelligence</span>
+          </div>
+
+          {/* Navigation Links list */}
+          <nav className="space-y-1" aria-label="Mobile Navigation">
+            {navLinks.map((link) => {
+              const isActive = currentPath === link.href;
+              return (
+                <button
+                  key={link.label}
+                  id={`mobile-${link.id}`}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-left transition-colors min-h-[44px] ${
+                    isActive
+                      ? 'text-[#0B5D3B] bg-[#DCFCE7] font-bold'
+                      : 'text-[#1F2937] hover:bg-[#F1F5F9] active:bg-gray-100'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  <span>{link.label}</span>
+                  <ChevronRight className={`w-4 h-4 ${isActive ? 'text-[#0B5D3B]' : 'text-gray-400'}`} />
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Mobile CTAs */}
+          <div className="mt-5 pt-4 border-t border-[#E5E7EB] space-y-2.5">
+            <button
+              id="header-mobile-get-started-btn"
+              onClick={handleGetStartedClick}
+              className="w-full flex items-center justify-center gap-2 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold py-3.5 px-4 rounded-xl text-sm shadow-sm transition-all min-h-[44px] active:scale-[0.99]"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            <button
+              id="header-mobile-contact-btn"
+              onClick={() => handleNavClick('/contact')}
+              className="w-full text-center py-3 px-4 rounded-xl text-sm font-semibold text-[#1F2937] bg-[#F8FAFC] hover:bg-gray-100 border border-[#E5E7EB] min-h-[44px]"
+            >
+              Talk to Our Data Architects
             </button>
           </div>
         </div>
-
-        {/* Right: Active Dataset Pill & Actions */}
-        <div className="flex items-center gap-3">
-          {datasets.length > 0 && (
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400 font-medium hidden md:inline">Dataset:</span>
-              <div className="relative">
-                <select
-                  id="active-dataset-selector"
-                  value={selectedDataset?.id || ''}
-                  onChange={(e) => {
-                    const found = datasets.find((d) => d.id === e.target.value);
-                    if (found) onSelectDataset(found);
-                  }}
-                  aria-label="Select Active Dataset"
-                  className="appearance-none bg-amber-500/10 border border-amber-500/30 hover:border-amber-500/60 rounded-md py-1.5 pl-8 pr-7 text-xs font-medium text-amber-200 cursor-pointer focus:outline-none focus:ring-1 focus:ring-amber-400"
-                >
-                  {datasets.map((d) => (
-                    <option key={d.id} value={d.id} className="bg-slate-900 text-slate-200">
-                      {d.name} ({d.rowCount} rows)
-                    </option>
-                  ))}
-                </select>
-                <Database className="w-3.5 h-3.5 text-amber-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <ChevronDown className="w-3 h-3 text-amber-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-              </div>
-            </div>
-          )}
-
-          <button
-            id="btn-upload-nav"
-            onClick={() => onOpenCreateModal('dataset')}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold text-xs rounded-md shadow-sm transition-colors"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            <span>Upload Data</span>
-          </button>
-        </div>
-      </div>
+      )}
     </header>
   );
 };
