@@ -1,0 +1,8 @@
+{
+  "name": "Nharire Intelligence",
+  "description": "African-first Data & AI Intelligence SaaS platform for dataset validation, profiling, analytics dashboards, AI analyst questions, and automated business reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
