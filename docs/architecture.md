@@ -195,13 +195,15 @@ Phase 1 MVP does not require Docker, Kubernetes, or Redis.
 
 ---
 
-## Phase A Scope (Current)
+## Phase A Scope (Completed Foundation)
 
-Phase A includes only:
+Phase A establishes the core platform foundation:
 
-- Monorepo folder structure (`frontend/`, `backend/`, `docs/`)
-- Root documentation and architecture reference
-- `.gitignore` and `.env.example`
-- Git repository initialization
+- **Monorepo folder structure**: Clean separation between `frontend/`, `backend/`, and `docs/`.
+- **Backend Core**: FastAPI application with structured routing (`/health`, `/api/v1/health`, `/api/v1/organizations`, `/api/v1/workspaces`, `/api/v1/users`).
+- **Database Architecture**: SQLAlchemy 2.0 multi-tenant models (`User`, `Organization`, `Workspace`, `OrganizationMember`), Alembic migration versioning (`0001_initial_multitenancy`), and PostgreSQL/SQLite development resilience.
+- **Authentication & Storage Stubs**: Firebase Admin SDK token claim verification and Firebase Cloud Storage tenant-partitioned blob key pathing.
+- **Frontend Core**: Next.js 14 (App Router) + TypeScript + Tailwind CSS with modular component hierarchy (`Header`, `Sidebar`, `LoadingState`, `ErrorState`, `EmptyState`) and type-safe API client.
+- **Testing & Quality**: Pytest test suite with in-memory SQLite isolation verifying database connections, health probes, model hierarchy, and RBAC role assignment.
+- **Developer Experience**: Root `Makefile` for automated dependency installation, local development server orchestration, database migrations, and testing.
 
-No application code, dependencies, authentication, database, or feature endpoints are part of Phase A.

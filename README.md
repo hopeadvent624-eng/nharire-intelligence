@@ -86,56 +86,76 @@ nharire-intelligence/
 
 ---
 
-## Local Development
+## Local Development & Quickstart
 
-> **Note:** The commands below belong to **later phases**. They are documented here for planning only. Phase A does not install dependencies or run application code.
+### Prerequisites
 
-### Prerequisites (later phases)
+- Node.js 18+ or 20+
+- Python 3.10+
+- SQLite (built-in default for development) or PostgreSQL 15+
 
-- Node.js 20+
-- Python 3.11+
-- PostgreSQL 15+ (local or managed dev instance)
-- A Firebase project (auth and storage — added in later phases)
-
-### Environment setup (later phases)
+### Environment Setup
 
 ```bash
 cp .env.example .env
 ```
 
-Fill in placeholder values in `.env` with your local or development credentials. **Never commit `.env`.**
+### Fast Track with Makefile
 
-### Frontend — Phase B (not started)
+The root `Makefile` provides one-line developer commands:
+
+```bash
+# 1. Install all dependencies (Python venv + frontend npm packages)
+make install
+
+# 2. Run database migrations
+make migrate
+
+# 3. Run test suite
+make test
+
+# 4. Start backend server (FastAPI on http://0.0.0.0:8000)
+make dev-backend
+
+# 5. Start frontend server (Next.js on http://localhost:3000)
+make dev-frontend
+```
+
+### Manual Service Startup
+
+#### Backend (FastAPI + SQLAlchemy)
+
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+alembic upgrade head
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+- API Health probe: `http://localhost:8000/api/v1/health`
+- Interactive OpenAPI documentation: `http://localhost:8000/docs`
+
+#### Frontend (Next.js 14 + Tailwind CSS)
 
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+- Web Application: `http://localhost:3000`
 
-Expected URL: `http://localhost:3000`
+---
 
-### Backend — Phase C (not started)
+## Phase A Implementation Status
 
-```bash
-cd backend
-python -m venv .venv
+- [x] **Monorepo Structure**: Clean decoupled `frontend/`, `backend/`, and `docs/` architecture.
+- [x] **FastAPI Core**: Standardized JSON responses, CORS configuration, centralized error handling, and modular routers.
+- [x] **Multi-Tenant Database Foundation**: SQLAlchemy 2.0 models with UUID primary keys (`User`, `Organization`, `Workspace`, `OrganizationMember`) and Alembic migration scripts.
+- [x] **Firebase Integration Stubs**: Secure Firebase Admin SDK token verification dependency and tenant-scoped cloud storage layout.
+- [x] **Next.js Frontend Foundation**: Enterprise App Router architecture, dark-mode styling with African design accents (emerald/amber highlights), responsive layout (`Header`, `Sidebar`), and client-side states (`LoadingState`, `ErrorState`, `EmptyState`).
+- [x] **Automated Testing**: Comprehensive pytest suite verifying API health endpoints, database transactions, model cascade logic, and multi-tenant role definitions.
 
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
-
-Expected URL: `http://localhost:8000` (API docs at `/docs`)
-
-### Running both together (later phases)
-
-In day-to-day development you will run the frontend and backend in **two separate terminal windows** once those phases are implemented.
 
 ---
 
