@@ -5,8 +5,6 @@ import {
   Database, 
   Sparkles, 
   BarChart3, 
-  CheckCircle2, 
-  TrendingUp, 
   Layers, 
   Cpu, 
   Building2, 
@@ -267,202 +265,56 @@ export const HomePage: React.FC = () => {
       />
 
       {/* =========================================================================
-          1. HERO SECTION (Exact Reference Layout: Left Copy + Right 3D Dashboard)
+          1. HERO SECTION: Clean, Focused High-Impact Headline & CTAs
          ========================================================================= */}
-      <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-white border-b border-[#E5E7EB]">
+      <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36 overflow-hidden bg-white border-b border-[#E5E7EB]">
         {/* Soft background green ambient gradients */}
-        <div className="absolute -top-24 right-0 w-[550px] h-[550px] bg-[#DCFCE7]/70 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#DCFCE7]/40 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#DCFCE7]/60 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#DCFCE7]/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center space-y-7">
             
-            {/* LEFT SIDE: Core Messaging & Calls to Action */}
-            <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              
-              {/* Badge */}
-              <div id="hero-badge" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
-                <span>African-First Data &amp; AI Company</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 id="hero-headline" className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#111827] leading-[1.12]">
-                Transform Data Into <span className="text-[#0B5D3B]">Decisions</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p id="hero-subheadline" className="text-base sm:text-lg text-[#6B7280] leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
-                Nharire Data Group helps organizations unlock growth through Data Analytics, Business Intelligence, AI Solutions, Automation, and Custom Software Development.
-              </p>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-                <button
-                  id="hero-primary-cta"
-                  onClick={() => navigate('/platform')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-7 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg hover:shadow-[#0B5D3B]/25 transition-all focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 active:scale-[0.99]"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button
-                  id="hero-secondary-cta"
-                  onClick={() => navigate('/solutions')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-[#111827] bg-[#F8FAFC] hover:bg-gray-100 border border-[#E5E7EB] hover:border-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300"
-                >
-                  <span>Explore Solutions</span>
-                </button>
-              </div>
-
-              {/* Trust Indicator */}
-              <div id="hero-trust-statement" className="pt-4 border-t border-gray-100 flex items-center justify-center lg:justify-start gap-2.5 text-xs font-medium text-[#6B7280]">
-                <ShieldCheck className="w-4 h-4 text-[#16A34A] shrink-0" />
-                <span>Trusted by forward-thinking organizations across Africa.</span>
-              </div>
-
+            {/* Badge */}
+            <div id="hero-badge" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold tracking-wide shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
+              <span>African-First Data &amp; AI Company</span>
             </div>
 
-            {/* RIGHT SIDE: Large Premium 3D / SaaS Product Visualization */}
-            <div className="lg:col-span-6">
-              <div className="relative mx-auto max-w-lg lg:max-w-none">
-                
-                {/* Main Glassmorphic Platform Container */}
-                <div className="relative rounded-3xl bg-white border border-[#E5E7EB] p-5 sm:p-7 shadow-2xl shadow-[#0B5D3B]/10 overflow-hidden">
-                  
-                  {/* Top Window Bar */}
-                  <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400" />
-                      <div className="w-3 h-3 rounded-full bg-amber-400" />
-                      <div className="w-3 h-3 rounded-full bg-emerald-400" />
-                      <span className="ml-2 text-xs font-bold text-gray-700">Nharire Intelligence Suite</span>
-                    </div>
-                    <span className="text-[11px] font-semibold text-[#0B5D3B] bg-[#DCFCE7] px-2.5 py-0.5 rounded-full">
-                      ● Live Intelligence Stream
-                    </span>
-                  </div>
+            {/* Main Headline */}
+            <h1 id="hero-headline" className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#111827] leading-[1.08]">
+              Transform Data Into <span className="text-[#0B5D3B]">Decisions</span>
+            </h1>
 
-                  {/* High Level KPI Cards Row */}
-                  <div className="grid grid-cols-3 gap-3 my-4">
-                    
-                    {/* KPI 1 */}
-                    <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-3">
-                      <span className="text-[10px] uppercase font-bold text-[#6B7280] block">Health Index</span>
-                      <div className="text-xl sm:text-2xl font-extrabold text-[#0B5D3B] mt-0.5">
-                        96<span className="text-xs text-gray-400">/100</span>
-                      </div>
-                      <span className="text-[10px] text-[#16A34A] font-semibold flex items-center gap-0.5 mt-0.5">
-                        <CheckCircle2 className="w-2.5 h-2.5" /> Certified
-                      </span>
-                    </div>
+            {/* Subheadline */}
+            <p id="hero-subheadline" className="text-base sm:text-lg lg:text-xl text-[#6B7280] leading-relaxed max-w-2xl mx-auto font-normal">
+              Nharire Data Group helps organizations unlock growth through Data Analytics, Business Intelligence, AI Solutions, Automation, and Custom Software Development.
+            </p>
 
-                    {/* KPI 2 */}
-                    <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-3">
-                      <span className="text-[10px] uppercase font-bold text-[#6B7280] block">Revenue Flow</span>
-                      <div className="text-xl sm:text-2xl font-extrabold text-gray-900 mt-0.5">
-                        $248.6k
-                      </div>
-                      <span className="text-[10px] text-[#16A34A] font-semibold flex items-center gap-0.5 mt-0.5">
-                        <TrendingUp className="w-2.5 h-2.5" /> +18.4%
-                      </span>
-                    </div>
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+              <button
+                id="hero-primary-cta"
+                onClick={() => navigate('/platform')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-8 py-4 rounded-xl text-base shadow-md hover:shadow-lg hover:shadow-[#0B5D3B]/25 transition-all focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 active:scale-[0.99]"
+              >
+                <span>Get Started</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-                    {/* KPI 3 */}
-                    <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-3">
-                      <span className="text-[10px] uppercase font-bold text-[#6B7280] block">Latency</span>
-                      <div className="text-xl sm:text-2xl font-extrabold text-gray-900 mt-0.5">
-                        14ms
-                      </div>
-                      <span className="text-[10px] text-gray-500 font-semibold mt-0.5 block">
-                        Server-Verified
-                      </span>
-                    </div>
+              <button
+                id="hero-secondary-cta"
+                onClick={() => navigate('/solutions')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-[#111827] bg-[#F8FAFC] hover:bg-gray-100 border border-[#E5E7EB] hover:border-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-2xs"
+              >
+                <span>Explore Solutions</span>
+              </button>
+            </div>
 
-                  </div>
-
-                  {/* Business Intelligence Visual Chart Widget */}
-                  <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-4 my-4 space-y-3">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="font-bold text-gray-900">Regional Trade Velocity by Channel</span>
-                      <span className="text-[11px] text-[#6B7280] font-mono">Q1 Real-Time</span>
-                    </div>
-
-                    {/* Bar visualization */}
-                    <div className="space-y-2">
-                      <div>
-                        <div className="flex justify-between text-[11px] text-gray-600 mb-1">
-                          <span className="font-medium">Wholesale Regional Hubs</span>
-                          <span className="font-bold text-gray-900">$104.2k (42%)</span>
-                        </div>
-                        <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#0B5D3B] rounded-full w-[42%]" />
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between text-[11px] text-gray-600 mb-1">
-                          <span className="font-medium">Informal Spaza Trade</span>
-                          <span className="font-bold text-gray-900">$86.8k (35%)</span>
-                        </div>
-                        <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#22C55E] rounded-full w-[35%]" />
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between text-[11px] text-gray-600 mb-1">
-                          <span className="font-medium">Modern Retail Supermarkets</span>
-                          <span className="font-bold text-gray-900">$57.6k (23%)</span>
-                        </div>
-                        <div className="w-full h-2.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div className="h-full bg-emerald-400 rounded-full w-[23%]" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* AI Assistant Dashboard Panel ("Ask Nharire") */}
-                  <div className="bg-gradient-to-r from-[#DCFCE7]/60 to-white border border-[#22C55E]/30 rounded-2xl p-4 shadow-sm">
-                    <div className="flex items-center gap-2 text-[#0B5D3B] font-bold text-xs mb-1.5">
-                      <Bot className="w-4 h-4 text-[#0B5D3B]" />
-                      <span>Nharire Grounded AI Analyst Directive</span>
-                    </div>
-                    <p className="text-xs text-gray-700 leading-relaxed font-normal">
-                      "High transaction velocity detected via mobile money in Bulawayo and Mutare depots. Recommend reallocating 15% inventory buffer to avert projected weekend stockouts."
-                    </p>
-                    <div className="mt-2.5 pt-2 border-t border-[#22C55E]/20 flex items-center justify-between text-[11px]">
-                      <span className="text-gray-500">Zero Mathematical Hallucinations</span>
-                      <span className="text-[#0B5D3B] font-bold">100% Deterministic</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Decorative floating badge 1 */}
-                <div className="absolute -top-4 -right-4 bg-white border border-[#E5E7EB] rounded-2xl p-3 shadow-xl hidden sm:flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B]">
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <div className="text-left">
-                    <span className="block text-[11px] font-bold text-gray-900">AI Intelligence</span>
-                    <span className="block text-[10px] text-[#16A34A] font-semibold">Active &amp; Grounded</span>
-                  </div>
-                </div>
-
-                {/* Decorative floating badge 2 */}
-                <div className="absolute -bottom-4 -left-4 bg-white border border-[#E5E7EB] rounded-2xl p-3 shadow-xl hidden sm:flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-[#0B5D3B] flex items-center justify-center text-white">
-                    <ShieldCheck className="w-4 h-4" />
-                  </div>
-                  <div className="text-left">
-                    <span className="block text-[11px] font-bold text-gray-900">Enterprise Tenant</span>
-                    <span className="block text-[10px] text-gray-500">AES-256 Encrypted</span>
-                  </div>
-                </div>
-
-              </div>
+            {/* Trust Indicator */}
+            <div id="hero-trust-statement" className="pt-6 border-t border-gray-100 flex items-center justify-center gap-2.5 text-xs font-medium text-[#6B7280]">
+              <ShieldCheck className="w-4 h-4 text-[#16A34A] shrink-0" />
+              <span>Trusted by forward-thinking organizations across Africa.</span>
             </div>
 
           </div>
