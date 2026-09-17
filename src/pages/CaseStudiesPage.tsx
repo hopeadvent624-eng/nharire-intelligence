@@ -96,7 +96,7 @@ export const CaseStudiesPage: React.FC = () => {
 
         {/* Hero Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/30 text-[#0284C7] text-xs font-bold mb-4">
             <BarChart3 className="w-3.5 h-3.5" />
             <span>Operational Evidence &amp; Pilot Telemetry</span>
           </div>
@@ -110,9 +110,9 @@ export const CaseStudiesPage: React.FC = () => {
 
         {/* Transparency / Compliance Notice */}
         <div className="bg-white border border-[#E5E7EB] rounded-2xl p-4 sm:p-5 mb-10 flex items-start gap-3 shadow-xs">
-          <AlertCircle className="w-5 h-5 text-[#0B5D3B] shrink-0 mt-0.5" />
+          <AlertCircle className="w-5 h-5 text-[#0284C7] shrink-0 mt-0.5" />
           <div className="text-xs text-gray-600 leading-relaxed">
-            <strong className="text-[#0B5D3B] font-bold">Benchmarking Disclosure:</strong> The case analyses below are compiled from verified pilot deployments, operational telemetry datasets, and client benchmark architectures conducted across Southern and East Africa. Specific company identifiers have been anonymized in accordance with sovereign non-disclosure commitments.
+            <strong className="text-[#0284C7] font-bold">Benchmarking Disclosure:</strong> The case analyses below are compiled from verified pilot deployments, operational telemetry datasets, and client benchmark architectures conducted across Southern and East Africa. Specific company identifiers have been anonymized in accordance with sovereign non-disclosure commitments.
           </div>
         </div>
 
@@ -122,7 +122,7 @@ export const CaseStudiesPage: React.FC = () => {
             onClick={() => setActiveFilter('all')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeFilter === 'all'
-                ? 'bg-[#0B5D3B] text-white font-bold shadow-xs'
+                ? 'bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white font-bold shadow-xs'
                 : 'bg-white text-gray-700 hover:text-gray-900 border border-gray-200'
             }`}
           >
@@ -132,7 +132,7 @@ export const CaseStudiesPage: React.FC = () => {
             onClick={() => setActiveFilter('retail')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeFilter === 'retail'
-                ? 'bg-[#0B5D3B] text-white font-bold shadow-xs'
+                ? 'bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white font-bold shadow-xs'
                 : 'bg-white text-gray-700 hover:text-gray-900 border border-gray-200'
             }`}
           >
@@ -142,7 +142,7 @@ export const CaseStudiesPage: React.FC = () => {
             onClick={() => setActiveFilter('agri')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeFilter === 'agri'
-                ? 'bg-[#0B5D3B] text-white font-bold shadow-xs'
+                ? 'bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white font-bold shadow-xs'
                 : 'bg-white text-gray-700 hover:text-gray-900 border border-gray-200'
             }`}
           >
@@ -152,7 +152,7 @@ export const CaseStudiesPage: React.FC = () => {
             onClick={() => setActiveFilter('finance')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeFilter === 'finance'
-                ? 'bg-[#0B5D3B] text-white font-bold shadow-xs'
+                ? 'bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white font-bold shadow-xs'
                 : 'bg-white text-gray-700 hover:text-gray-900 border border-gray-200'
             }`}
           >
@@ -165,18 +165,18 @@ export const CaseStudiesPage: React.FC = () => {
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="bg-white border border-[#E5E7EB] rounded-3xl p-6 sm:p-10 hover:shadow-xl transition-all"
+              className="bg-white border border-[#E5E7EB] rounded-3xl p-6 sm:p-10 hover:shadow-xl hover:border-[#38BDF8]/40 transition-all"
             >
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-gray-100">
                 <div>
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="text-xs font-bold text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
                       {item.industry}
                     </span>
                     <span className="text-xs text-gray-500">
                       • {item.location}
                     </span>
-                    <span className="text-[10px] font-mono text-[#0B5D3B] bg-gray-100 border border-gray-200 px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-mono text-[#0284C7] bg-sky-50 border border-sky-200 px-2 py-0.5 rounded">
                       [Verified Benchmark Model]
                     </span>
                   </div>
@@ -204,8 +204,8 @@ export const CaseStudiesPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#DCFCE7]/30 p-5 rounded-2xl border border-[#22C55E]/30 space-y-2">
-                  <div className="text-xs font-bold text-[#0B5D3B] uppercase tracking-wider">
+                <div className="bg-[#E0F2FE]/50 p-5 rounded-2xl border border-[#38BDF8]/40 space-y-2">
+                  <div className="text-xs font-bold text-[#0284C7] uppercase tracking-wider">
                     The Nharire Intelligence Solution
                   </div>
                   <p className="text-xs text-gray-700 leading-relaxed">
@@ -218,7 +218,7 @@ export const CaseStudiesPage: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
                 {item.resultMetrics.map(m => (
                   <div key={m.label} className="bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200 text-center">
-                    <div className="text-2xl sm:text-3xl font-extrabold text-[#0B5D3B]">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#0284C7]">
                       {m.value}
                     </div>
                     <div className="text-xs font-bold text-gray-800 mt-1">
@@ -240,14 +240,14 @@ export const CaseStudiesPage: React.FC = () => {
                 <div className="flex items-center gap-3 shrink-0">
                   <button
                     onClick={() => navigate('/platform')}
-                    className="text-xs font-bold text-[#0B5D3B] hover:text-[#08482e] flex items-center gap-1"
+                    className="text-xs font-bold text-[#0284C7] hover:text-[#0369A1] flex items-center gap-1"
                   >
                     <span>Test on Sample Dataset</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <button
                     onClick={() => navigate('/contact')}
-                    className="bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors shadow-xs"
+                    className="bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors shadow-xs"
                   >
                     Talk to Us
                   </button>
@@ -258,30 +258,33 @@ export const CaseStudiesPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Conversion Banner: Dark Green #0B5D3B */}
-        <div className="bg-[#0B5D3B] text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl">
-          <span className="text-xs uppercase font-bold tracking-widest text-[#22C55E] bg-[#08482e] px-3 py-1 rounded-full border border-[#22C55E]/20">
-            Proven Results
-          </span>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3 mb-2">
-            Accelerate Your Enterprise Intelligence Today
-          </h3>
-          <p className="text-emerald-100/90 text-sm max-w-xl mx-auto mb-6">
-            Review how our team can model your specific regional logistics or point-of-sale data streams in a secure sandbox.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
-            <button
-              onClick={() => navigate('/platform')}
-              className="bg-white hover:bg-gray-100 text-[#0B5D3B] font-bold px-6 py-3 rounded-xl text-sm shadow-md transition-colors"
-            >
-              Get Started
-            </button>
-            <button
-              onClick={() => navigate('/contact')}
-              className="bg-[#08482e] hover:bg-[#063b25] text-white font-semibold px-6 py-3 rounded-xl text-sm border border-emerald-500/30 transition-colors"
-            >
-              Talk to Us
-            </button>
+        {/* Bottom Conversion Banner: Cyber Navy #0A1128 */}
+        <div className="bg-[#0A1128] border border-[#1E293B] text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#00D2FF] bg-[#0F1D40] px-3 py-1 rounded-full border border-[#00D2FF]/30">
+              Proven Results
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3 mb-2">
+              Accelerate Your Enterprise Intelligence Today
+            </h3>
+            <p className="text-sky-100/90 text-sm max-w-xl mx-auto mb-6">
+              Review how our team can model your specific regional logistics or point-of-sale data streams in a secure sandbox.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
+              <button
+                onClick={() => navigate('/platform')}
+                className="bg-white hover:bg-sky-50 text-[#0F172A] font-bold px-6 py-3 rounded-xl text-sm shadow-md shadow-[#00D2FF]/20 transition-colors"
+              >
+                Get Started
+              </button>
+              <button
+                onClick={() => navigate('/contact')}
+                className="bg-[#0F1D40] hover:bg-[#162752] text-white font-semibold px-6 py-3 rounded-xl text-sm border border-[#38BDF8]/40 transition-colors"
+              >
+                Talk to Us
+              </button>
+            </div>
           </div>
         </div>
 

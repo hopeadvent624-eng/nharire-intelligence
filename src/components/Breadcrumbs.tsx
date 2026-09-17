@@ -45,7 +45,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
         <li className="flex items-center">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-1 hover:text-[#0B5D3B] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0B5D3B] rounded px-1 py-0.5"
+            className="flex items-center gap-1 hover:text-[#0284C7] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0284C7] rounded px-1 py-0.5"
           >
             <Home className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Home</span>
@@ -64,7 +64,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
               ) : (
                 <button
                   onClick={() => navigate(item.href!)}
-                  className="hover:text-[#0B5D3B] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0B5D3B] rounded px-1 py-0.5"
+                  className="hover:text-[#0284C7] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0284C7] rounded px-1 py-0.5"
                 >
                   {item.label}
                 </button>

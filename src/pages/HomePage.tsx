@@ -265,38 +265,50 @@ export const HomePage: React.FC = () => {
       />
 
       {/* =========================================================================
-          1. HERO SECTION: Clean, Focused High-Impact Headline & CTAs
+          1. HERO SECTION: Clean High-Impact Headline & Custom Data Background
          ========================================================================= */}
       <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36 overflow-hidden bg-white border-b border-[#E5E7EB]">
-        {/* Soft background green ambient gradients */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#DCFCE7]/60 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#DCFCE7]/30 rounded-full blur-3xl pointer-events-none -z-10" />
+        {/* Hero Background Image (Futuristic High-Tech Data Intelligence Graphic) */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+          <img
+            src="/hero-bg.jpg"
+            alt="Nharire Intelligence Future of Data Analytics Background"
+            className="w-full h-full object-cover object-right md:object-right-center opacity-50 lg:opacity-75 transition-opacity"
+            referrerPolicy="no-referrer"
+          />
+          {/* Multi-directional gradient masks for crystal-clear readability and contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/20 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
+          {/* Ambient soft electric cyan and blue glow matching hero image */}
+          <div className="absolute -top-24 left-1/4 w-[600px] h-[500px] bg-[#38BDF8]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 left-10 w-[400px] h-[400px] bg-[#0284C7]/15 rounded-full blur-3xl pointer-events-none" />
+        </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-7">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl lg:max-w-3xl space-y-7 text-left">
             
             {/* Badge */}
-            <div id="hero-badge" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold tracking-wide shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
+            <div id="hero-badge" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE]/90 backdrop-blur-xs border border-[#38BDF8]/40 text-[#0369A1] text-xs font-bold tracking-wide shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#00D2FF] shadow-[0_0_8px_#00D2FF] animate-pulse" />
               <span>African-First Data &amp; AI Company</span>
             </div>
 
             {/* Main Headline */}
-            <h1 id="hero-headline" className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#111827] leading-[1.08]">
-              Transform Data Into <span className="text-[#0B5D3B]">Decisions</span>
+            <h1 id="hero-headline" className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0F172A] leading-[1.08]">
+              Transform Data Into <span className="bg-gradient-to-r from-[#00A3FF] via-[#0284C7] to-[#1D4ED8] bg-clip-text text-transparent">Decisions</span>
             </h1>
 
             {/* Subheadline */}
-            <p id="hero-subheadline" className="text-base sm:text-lg lg:text-xl text-[#6B7280] leading-relaxed max-w-2xl mx-auto font-normal">
+            <p id="hero-subheadline" className="text-base sm:text-lg lg:text-xl text-[#4B5563] leading-relaxed max-w-2xl font-normal">
               Nharire Data Group helps organizations unlock growth through Data Analytics, Business Intelligence, AI Solutions, Automation, and Custom Software Development.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <button
                 id="hero-primary-cta"
                 onClick={() => navigate('/platform')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-8 py-4 rounded-xl text-base shadow-md hover:shadow-lg hover:shadow-[#0B5D3B]/25 transition-all focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 active:scale-[0.99]"
+                className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white font-bold px-8 py-4 rounded-xl text-base shadow-md hover:shadow-lg hover:shadow-[#0284C7]/30 transition-all focus:outline-none focus:ring-2 focus:ring-[#0284C7]/40 active:scale-[0.99] border border-[#38BDF8]/30"
               >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
@@ -305,15 +317,15 @@ export const HomePage: React.FC = () => {
               <button
                 id="hero-secondary-cta"
                 onClick={() => navigate('/solutions')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-[#111827] bg-[#F8FAFC] hover:bg-gray-100 border border-[#E5E7EB] hover:border-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-2xs"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-[#0F172A] bg-white/90 hover:bg-white border border-[#BAE6FD] hover:border-[#38BDF8] transition-all focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/40 shadow-2xs backdrop-blur-xs"
               >
                 <span>Explore Solutions</span>
               </button>
             </div>
 
             {/* Trust Indicator */}
-            <div id="hero-trust-statement" className="pt-6 border-t border-gray-100 flex items-center justify-center gap-2.5 text-xs font-medium text-[#6B7280]">
-              <ShieldCheck className="w-4 h-4 text-[#16A34A] shrink-0" />
+            <div id="hero-trust-statement" className="pt-6 border-t border-gray-200/80 flex items-center gap-2.5 text-xs font-medium text-[#4B5563]">
+              <ShieldCheck className="w-4 h-4 text-[#0284C7] shrink-0" />
               <span>Trusted by forward-thinking organizations across Africa.</span>
             </div>
 
@@ -327,7 +339,7 @@ export const HomePage: React.FC = () => {
          ========================================================================= */}
       <section className="py-14 bg-white border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] mb-8">
+          <p className="text-xs uppercase font-bold tracking-widest text-[#0284C7] mb-8">
             Trusted Across African Industries
           </p>
 
@@ -337,12 +349,12 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={ind.name}
-                  className="bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#22C55E]/50 rounded-2xl p-4 flex flex-col items-center justify-center group transition-all hover:shadow-md hover:bg-white"
+                  className="bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#38BDF8]/50 rounded-2xl p-4 flex flex-col items-center justify-center group transition-all hover:shadow-md hover:bg-white"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-white border border-[#E5E7EB] group-hover:bg-[#DCFCE7] group-hover:border-[#22C55E]/40 flex items-center justify-center text-[#0B5D3B] mb-2.5 transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-white border border-[#E5E7EB] group-hover:bg-[#E0F2FE] group-hover:border-[#38BDF8]/40 flex items-center justify-center text-[#0284C7] mb-2.5 transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-sm font-bold text-gray-900 group-hover:text-[#0B5D3B] transition-colors">
+                  <span className="text-sm font-bold text-gray-900 group-hover:text-[#0284C7] transition-colors">
                     {ind.name}
                   </span>
                   <span className="text-[11px] text-[#6B7280] text-center mt-0.5 line-clamp-1">
@@ -363,7 +375,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               Platform Features
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -380,19 +392,19 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={item.title}
-                  className="bg-white border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#22C55E]/50 transition-all group"
+                  className="bg-white border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#38BDF8]/50 transition-all group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-2xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] group-hover:bg-[#0B5D3B] group-hover:text-white transition-all shadow-xs">
+                      <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] group-hover:bg-[#0284C7] group-hover:text-white transition-all shadow-xs">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[11px] font-bold text-[#0B5D3B] bg-[#DCFCE7]/70 px-2.5 py-1 rounded-full">
+                      <span className="text-[11px] font-bold text-[#0284C7] bg-[#E0F2FE]/70 border border-[#38BDF8]/20 px-2.5 py-1 rounded-full">
                         {item.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#111827] mb-2 group-hover:text-[#0B5D3B] transition-colors">
+                    <h3 className="text-xl font-bold text-[#111827] mb-2 group-hover:text-[#0284C7] transition-colors">
                       {idx + 1}. {item.title}
                     </h3>
                     <p className="text-sm text-[#6B7280] leading-relaxed">
@@ -400,7 +412,7 @@ export const HomePage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-gray-100 flex items-center text-xs font-semibold text-[#0B5D3B] group-hover:translate-x-1 transition-transform">
+                  <div className="mt-6 pt-4 border-t border-gray-100 flex items-center text-xs font-semibold text-[#0284C7] group-hover:translate-x-1 transition-transform">
                     <span>Explore {item.title}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />
                   </div>
@@ -414,72 +426,74 @@ export const HomePage: React.FC = () => {
 
 
       {/* =========================================================================
-          4. STATISTICS SECTION: Dark Green (#0B5D3B) Impact Section
+          4. STATISTICS SECTION: Cyber Navy (#0A1128) Impact Section
          ========================================================================= */}
-      <section className="py-20 bg-[#0B5D3B] text-white relative overflow-hidden">
+      <section className="py-20 bg-[#0A1128] text-white relative overflow-hidden">
         {/* Subtle geometric pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px]" />
+        {/* Ambient cyan glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#22C55E] bg-[#08482e] px-3 py-1 rounded-full border border-[#22C55E]/20">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#00D2FF] bg-[#0F1D40] px-3 py-1 rounded-full border border-[#00D2FF]/30">
               Proven Scale &amp; Impact
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
               Enterprise Performance Measured in Real Value
             </h2>
-            <p className="text-emerald-100/80 text-sm sm:text-base mt-2">
+            <p className="text-sky-100/80 text-sm sm:text-base mt-2">
               Powering strategic data operations for enterprises, distributors, and agro-processors across Africa.
             </p>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div className="bg-[#08482e]/80 border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
-              <div className="text-4xl sm:text-5xl font-black text-[#22C55E] tracking-tight">
+            <div className="bg-[#0F1D40]/80 border border-[#38BDF8]/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
+              <div className="text-4xl sm:text-5xl font-black text-[#00D2FF] tracking-tight drop-shadow-[0_0_12px_rgba(0,210,255,0.4)]">
                 50+
               </div>
               <div className="text-base sm:text-lg font-bold text-white mt-2">
                 Projects Delivered
               </div>
-              <p className="text-xs text-emerald-200/70 mt-1">
+              <p className="text-xs text-sky-200/70 mt-1">
                 Across commercial &amp; sovereign sectors
               </p>
             </div>
 
-            <div className="bg-[#08482e]/80 border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
-              <div className="text-4xl sm:text-5xl font-black text-[#22C55E] tracking-tight">
+            <div className="bg-[#0F1D40]/80 border border-[#38BDF8]/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
+              <div className="text-4xl sm:text-5xl font-black text-[#00D2FF] tracking-tight drop-shadow-[0_0_12px_rgba(0,210,255,0.4)]">
                 95%
               </div>
               <div className="text-base sm:text-lg font-bold text-white mt-2">
                 Client Satisfaction
               </div>
-              <p className="text-xs text-emerald-200/70 mt-1">
+              <p className="text-xs text-sky-200/70 mt-1">
                 Verified executive feedback
               </p>
             </div>
 
-            <div className="bg-[#08482e]/80 border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
-              <div className="text-4xl sm:text-5xl font-black text-[#22C55E] tracking-tight">
+            <div className="bg-[#0F1D40]/80 border border-[#38BDF8]/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
+              <div className="text-4xl sm:text-5xl font-black text-[#00D2FF] tracking-tight drop-shadow-[0_0_12px_rgba(0,210,255,0.4)]">
                 100M+
               </div>
               <div className="text-base sm:text-lg font-bold text-white mt-2">
                 Records Processed
               </div>
-              <p className="text-xs text-emerald-200/70 mt-1">
+              <p className="text-xs text-sky-200/70 mt-1">
                 POS dumps, mobile money &amp; ledgers
               </p>
             </div>
 
-            <div className="bg-[#08482e]/80 border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
-              <div className="text-4xl sm:text-5xl font-black text-[#22C55E] tracking-tight">
+            <div className="bg-[#0F1D40]/80 border border-[#38BDF8]/20 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-xs">
+              <div className="text-4xl sm:text-5xl font-black text-[#00D2FF] tracking-tight drop-shadow-[0_0_12px_rgba(0,210,255,0.4)]">
                 20+
               </div>
               <div className="text-base sm:text-lg font-bold text-white mt-2">
                 Industries Served
               </div>
-              <p className="text-xs text-emerald-200/70 mt-1">
+              <p className="text-xs text-sky-200/70 mt-1">
                 From FMCG to heavy infrastructure
               </p>
             </div>
@@ -498,7 +512,7 @@ export const HomePage: React.FC = () => {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
             <div>
-              <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+              <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
                 Tailored Solutions
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -507,7 +521,7 @@ export const HomePage: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/solutions')}
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-[#0B5D3B] hover:text-[#08482e]"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-[#0284C7] hover:text-[#0369A1]"
             >
               <span>View All Solutions</span>
               <ArrowRight className="w-4 h-4" />
@@ -520,13 +534,13 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={sol.title}
-                  className="bg-white border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#22C55E]/50 transition-all"
+                  className="bg-white border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:border-[#38BDF8]/50 transition-all"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-4">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-bold text-[#0B5D3B] uppercase tracking-wider block mb-1">
+                    <span className="text-[11px] font-bold text-[#0284C7] uppercase tracking-wider block mb-1">
                       {sol.tagline}
                     </span>
                     <h3 className="text-xl font-bold text-[#111827] mb-2">
@@ -543,7 +557,7 @@ export const HomePage: React.FC = () => {
                     </span>
                     <button
                       onClick={() => navigate('/solutions')}
-                      className="text-[#0B5D3B] font-bold hover:underline"
+                      className="text-[#0284C7] font-bold hover:underline"
                     >
                       Learn More →
                     </button>
@@ -565,7 +579,7 @@ export const HomePage: React.FC = () => {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
             <div>
-              <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+              <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
                 Real Evidence
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -574,7 +588,7 @@ export const HomePage: React.FC = () => {
             </div>
             <button
               onClick={() => navigate('/case-studies')}
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-[#0B5D3B] hover:text-[#08482e]"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-[#0284C7] hover:text-[#0369A1]"
             >
               <span>Explore All Case Studies</span>
               <ArrowRight className="w-4 h-4" />
@@ -585,11 +599,11 @@ export const HomePage: React.FC = () => {
             {caseStudies.map((cs) => (
               <div
                 key={cs.title}
-                className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:bg-white hover:border-[#22C55E]/50 transition-all"
+                className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-3xl p-7 flex flex-col justify-between hover:shadow-xl hover:bg-white hover:border-[#38BDF8]/50 transition-all"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0B5D3B] bg-[#DCFCE7] px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-bold text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-2.5 py-1 rounded-full">
                       {cs.badge}
                     </span>
                     <span className="text-[11px] text-[#6B7280]">
@@ -608,12 +622,12 @@ export const HomePage: React.FC = () => {
                     </div>
 
                     <div className="bg-white p-3.5 rounded-xl border border-gray-200">
-                      <strong className="text-[#0B5D3B] block mb-0.5">Solution:</strong>
+                      <strong className="text-[#0284C7] block mb-0.5">Solution:</strong>
                       <span className="text-gray-600">{cs.solution}</span>
                     </div>
 
-                    <div className="bg-[#DCFCE7]/60 p-3.5 rounded-xl border border-[#22C55E]/30">
-                      <strong className="text-[#0B5D3B] block mb-0.5">Outcome:</strong>
+                    <div className="bg-[#E0F2FE]/70 p-3.5 rounded-xl border border-[#38BDF8]/40">
+                      <strong className="text-[#0369A1] block mb-0.5">Outcome:</strong>
                       <span className="text-gray-800 font-medium">{cs.outcome}</span>
                     </div>
                   </div>
@@ -622,7 +636,7 @@ export const HomePage: React.FC = () => {
                 <div className="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
                   <button
                     onClick={() => navigate('/case-studies')}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B5D3B] hover:text-[#08482e]"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0284C7] hover:text-[#0369A1]"
                   >
                     <span>View Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -649,7 +663,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               Enterprise Trust
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -668,7 +682,7 @@ export const HomePage: React.FC = () => {
               >
                 <div>
                   {/* Rating Stars */}
-                  <div className="flex items-center gap-1 text-[#22C55E] mb-4">
+                  <div className="flex items-center gap-1 text-[#0284C7] mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
@@ -680,14 +694,14 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 <div className="pt-4 border-t border-gray-100 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] font-bold text-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] font-bold text-sm">
                     {t.author.charAt(0)}
                   </div>
                   <div>
                     <span className="block text-sm font-bold text-gray-900">
                       {t.author}
                     </span>
-                    <span className="block text-xs text-[#0B5D3B] font-medium">
+                    <span className="block text-xs text-[#0284C7] font-medium">
                       {t.company}
                     </span>
                     <span className="block text-[11px] text-gray-400">
@@ -710,7 +724,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               Engagement Plans
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -727,12 +741,12 @@ export const HomePage: React.FC = () => {
                 key={tier.name}
                 className={`rounded-3xl p-8 flex flex-col justify-between transition-all ${
                   tier.popular
-                    ? 'bg-[#F8FAFC] border-2 border-[#0B5D3B] shadow-xl relative'
+                    ? 'bg-[#F8FAFC] border-2 border-[#0284C7] shadow-xl relative'
                     : 'bg-white border border-[#E5E7EB] hover:shadow-lg'
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#0B5D3B] text-white text-xs font-bold px-4 py-1 rounded-full shadow-sm">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white text-xs font-bold px-4 py-1 rounded-full shadow-sm">
                     Most Popular for Enterprises
                   </div>
                 )}
@@ -752,7 +766,7 @@ export const HomePage: React.FC = () => {
                     <ul className="space-y-2.5 text-xs text-gray-700">
                       {tier.features.map((feat) => (
                         <li key={feat} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <Check className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}
@@ -765,7 +779,7 @@ export const HomePage: React.FC = () => {
                     onClick={() => navigate('/contact')}
                     className={`w-full py-3.5 px-4 rounded-xl text-sm font-bold transition-all shadow-sm ${
                       tier.popular
-                        ? 'bg-[#0B5D3B] hover:bg-[#08482e] text-white shadow-md'
+                        ? 'bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white shadow-md'
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-200'
                     }`}
                   >
@@ -790,7 +804,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-14">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               FAQ
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mt-3 tracking-tight">
@@ -818,8 +832,8 @@ export const HomePage: React.FC = () => {
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#0B5D3B] shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 text-[#0B5D3B]' : 'text-gray-400'
+                      className={`w-5 h-5 shrink-0 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180 text-[#0284C7]' : 'text-gray-400'
                       }`}
                     />
                   </button>
@@ -837,7 +851,7 @@ export const HomePage: React.FC = () => {
           <div className="mt-10 text-center">
             <button
               onClick={() => navigate('/faq')}
-              className="text-sm font-bold text-[#0B5D3B] hover:text-[#08482e] inline-flex items-center gap-1.5"
+              className="text-sm font-bold text-[#0284C7] hover:text-[#0369A1] inline-flex items-center gap-1.5"
             >
               <span>View Full FAQ &amp; Technical Specifications</span>
               <ArrowRight className="w-4 h-4" />
@@ -849,15 +863,15 @@ export const HomePage: React.FC = () => {
 
 
       {/* =========================================================================
-          10. FINAL CTA SECTION: Dark Green (#0B5D3B) Premium Section
+          10. FINAL CTA SECTION: Cyber Navy & Ice Cyan Hero Palette
          ========================================================================= */}
-      <section className="py-20 lg:py-24 bg-[#0B5D3B] text-white text-center relative overflow-hidden">
-        {/* Ambient glow in center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#22C55E]/15 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-20 lg:py-24 bg-[#0A1128] text-white text-center relative overflow-hidden border-t border-[#1E293B]">
+        {/* Ambient glow in center matching hero image electric cyan */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#00D2FF]/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#08482e] border border-[#22C55E]/30 text-[#22C55E] text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0F1D40] border border-[#00D2FF]/40 text-[#00D2FF] text-xs font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Nharire Data Group Enterprise Access</span>
           </div>
@@ -866,14 +880,14 @@ export const HomePage: React.FC = () => {
             Ready to Turn Data Into Decisions?
           </h2>
 
-          <p className="text-emerald-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-sky-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             Join forward-thinking African enterprises unlocking real-time operational insights, automated reports, and zero-hallucination AI decision support.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={() => navigate('/platform')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#0B5D3B] font-bold px-8 py-4 rounded-xl text-base shadow-lg transition-all active:scale-[0.99]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-sky-50 text-[#0F172A] font-bold px-8 py-4 rounded-xl text-base shadow-lg shadow-[#00D2FF]/20 transition-all active:scale-[0.99]"
             >
               <span>Get Started</span>
               <ArrowRight className="w-4 h-4" />
@@ -881,13 +895,13 @@ export const HomePage: React.FC = () => {
 
             <button
               onClick={() => navigate('/contact')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-[#08482e] hover:bg-[#063b25] border border-emerald-500/30 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-[#0F1D40] hover:bg-[#162752] border border-[#38BDF8]/40 transition-colors"
             >
               <span>Talk To Us</span>
             </button>
           </div>
 
-          <p className="text-xs text-emerald-200/60 pt-2">
+          <p className="text-xs text-sky-200/60 pt-2">
             No long-term lock-in • Rapid onboarding in under 1 business day
           </p>
 

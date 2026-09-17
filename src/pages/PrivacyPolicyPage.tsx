@@ -30,7 +30,7 @@ export const PrivacyPolicyPage: React.FC = () => {
 
         {/* Hero Header */}
         <div className="mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/30 text-[#0284C7] text-xs font-bold mb-4">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Sovereign Data Governance</span>
           </div>
@@ -45,24 +45,24 @@ export const PrivacyPolicyPage: React.FC = () => {
         {/* Executive Summary Card */}
         <div className="bg-white border border-[#E5E7EB] rounded-3xl p-6 sm:p-8 mb-12 space-y-4 shadow-xs">
           <h2 className="text-lg font-extrabold text-gray-900 flex items-center gap-2">
-            <Lock className="w-5 h-5 text-[#0B5D3B]" />
+            <Lock className="w-5 h-5 text-[#0284C7]" />
             <span>Our Sovereign Data Commitment in Brief</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-gray-600 pt-2">
             <div className="flex items-start gap-2.5 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-              <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
               <span><strong className="text-gray-900">Zero Model Training:</strong> Your organizational datasets are never used to train public generative or foundation models.</span>
             </div>
             <div className="flex items-start gap-2.5 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-              <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
               <span><strong className="text-gray-900">Tenant Isolation:</strong> Data is strictly partitioned into tenant-specific encrypted workspaces with no cross-contamination.</span>
             </div>
             <div className="flex items-start gap-2.5 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-              <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
               <span><strong className="text-gray-900">AES-256 Encryption:</strong> Ingestion feeds, profiled schemas, and generated briefings are encrypted at rest and in transit (TLS 1.3).</span>
             </div>
             <div className="flex items-start gap-2.5 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-              <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
               <span><strong className="text-gray-900">African Regulatory Alignment:</strong> Engineered to satisfy Zimbabwe Data Protection, SA POPIA, Kenya DPA, and European GDPR.</span>
             </div>
           </div>
@@ -162,7 +162,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             </p>
             <div className="bg-[#F8FAFC] p-5 rounded-2xl border border-gray-200 space-y-1.5 text-xs text-gray-700">
               <div><strong className="text-gray-900">Data Protection Officer:</strong> Nharire Data Group Governance Office</div>
-              <div><strong className="text-gray-900">Email:</strong> <a href="mailto:privacy@nharire.com" className="text-[#0B5D3B] font-semibold hover:underline">privacy@nharire.com</a></div>
+              <div><strong className="text-gray-900">Email:</strong> <a href="mailto:privacy@nharire.com" className="text-[#0284C7] font-semibold hover:underline">privacy@nharire.com</a></div>
               <div><strong className="text-gray-900">Corporate Address:</strong> Nharire Data Group (Private) Limited, Harare Technology Corridor, Zimbabwe</div>
               <div><strong className="text-gray-900">Response window:</strong> 1 business day for commercial inquiries; 14 calendar days for formal statutory data requests.</div>
             </div>
@@ -178,13 +178,13 @@ export const PrivacyPolicyPage: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigate('/contact')}
-              className="text-xs font-bold text-[#0B5D3B] hover:text-[#08482e]"
+              className="text-xs font-bold text-[#0284C7] hover:text-[#0369A1]"
             >
               Talk to Privacy Officer
             </button>
             <button
               onClick={() => navigate('/platform')}
-              className="bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors shadow-xs"
+              className="bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors shadow-xs"
             >
               Explore Platform
             </button>

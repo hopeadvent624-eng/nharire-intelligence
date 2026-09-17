@@ -107,7 +107,7 @@ export const FaqPage: React.FC = () => {
 
         {/* Hero Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/30 text-[#0284C7] text-xs font-bold mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Knowledge Base &amp; Specifications</span>
           </div>
@@ -126,7 +126,7 @@ export const FaqPage: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions (e.g. AI Analyst, security, API)..."
-              className="w-full bg-white border border-[#E5E7EB] rounded-2xl pl-10 pr-4 py-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0B5D3B]/40 shadow-xs"
+              className="w-full bg-white border border-[#E5E7EB] rounded-2xl pl-10 pr-4 py-3 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0284C7]/40 shadow-xs"
             />
           </div>
         </div>
@@ -138,7 +138,7 @@ export const FaqPage: React.FC = () => {
               <p className="text-gray-500 text-sm">No questions matched your query.</p>
               <button
                 onClick={() => setSearchQuery('')}
-                className="mt-2 text-[#0B5D3B] text-xs font-bold hover:underline"
+                className="mt-2 text-[#0284C7] text-xs font-bold hover:underline"
               >
                 Clear search filter
               </button>
@@ -149,7 +149,7 @@ export const FaqPage: React.FC = () => {
               return (
                 <div
                   key={faq.q}
-                  className="bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden transition-all hover:border-gray-300 shadow-xs"
+                  className="bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden transition-all hover:border-[#38BDF8]/40 shadow-xs"
                 >
                   <button
                     onClick={() => toggleItem(idx)}
@@ -160,7 +160,7 @@ export const FaqPage: React.FC = () => {
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#0B5D3B] shrink-0 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#0284C7] shrink-0 transition-transform duration-200 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
@@ -178,29 +178,32 @@ export const FaqPage: React.FC = () => {
         </div>
 
         {/* Still Have Questions CTA */}
-        <div className="bg-[#0B5D3B] text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl">
-          <div className="w-12 h-12 rounded-2xl bg-[#08482e] border border-emerald-500/30 flex items-center justify-center text-white mx-auto mb-4">
-            <MessageSquare className="w-6 h-6" />
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
-            Have a technical question not answered here?
-          </h3>
-          <p className="text-emerald-100/90 text-xs sm:text-sm max-w-lg mx-auto mb-6">
-            Our data systems architects are available to answer inquiries regarding customized ERP connectors, on-premise deployments, or data residency protocols.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
-            <button
-              onClick={() => navigate('/contact')}
-              className="bg-white hover:bg-gray-100 text-[#0B5D3B] font-bold px-6 py-3 rounded-xl text-xs sm:text-sm shadow-md transition-colors"
-            >
-              Talk to Our Engineers
-            </button>
-            <button
-              onClick={() => navigate('/platform')}
-              className="bg-[#08482e] hover:bg-[#063b25] text-white font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm border border-emerald-500/30 transition-colors"
-            >
-              Explore the Platform
-            </button>
+        <div className="bg-[#0A1128] border border-[#1E293B] text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10">
+            <div className="w-12 h-12 rounded-2xl bg-[#0F1D40] border border-[#00D2FF]/30 flex items-center justify-center text-[#00D2FF] mx-auto mb-4">
+              <MessageSquare className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+              Have a technical question not answered here?
+            </h3>
+            <p className="text-sky-100/90 text-xs sm:text-sm max-w-lg mx-auto mb-6">
+              Our data systems architects are available to answer inquiries regarding customized ERP connectors, on-premise deployments, or data residency protocols.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
+              <button
+                onClick={() => navigate('/contact')}
+                className="bg-white hover:bg-sky-50 text-[#0F172A] font-bold px-6 py-3 rounded-xl text-xs sm:text-sm shadow-md shadow-[#00D2FF]/20 transition-colors"
+              >
+                Talk to Our Engineers
+              </button>
+              <button
+                onClick={() => navigate('/platform')}
+                className="bg-[#0F1D40] hover:bg-[#162752] text-white font-semibold px-6 py-3 rounded-xl text-xs sm:text-sm border border-[#38BDF8]/40 transition-colors"
+              >
+                Explore the Platform
+              </button>
+            </div>
           </div>
         </div>
 

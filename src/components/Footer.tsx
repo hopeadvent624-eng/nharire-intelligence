@@ -13,19 +13,19 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Positioning */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0B5D3B] flex items-center justify-center shadow-md shadow-[#0B5D3B]/20">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0284C7] via-[#0369A1] to-[#1E40AF] flex items-center justify-center shadow-md shadow-[#0284C7]/20">
                 <svg className="w-6 h-6" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 7L30 15H10L20 7Z" fill="#22C55E"/>
+                  <path d="M20 7L30 15H10L20 7Z" fill="#00D2FF"/>
                   <rect x="13.5" y="15" width="13" height="7" rx="1.5" fill="#FFFFFF"/>
-                  <circle cx="20" cy="18.5" r="2.5" fill="#0B5D3B"/>
-                  <circle cx="20" cy="18.5" r="1" fill="#22C55E"/>
-                  <path d="M11 23H29L32 33H8L11 23Z" fill="#DCFCE7"/>
-                  <rect x="18.5" y="25" width="3" height="8" rx="1" fill="#0B5D3B"/>
+                  <circle cx="20" cy="18.5" r="2.5" fill="#0A1128"/>
+                  <circle cx="20" cy="18.5" r="1" fill="#00D2FF"/>
+                  <path d="M11 23H29L32 33H8L11 23Z" fill="#BAE6FD"/>
+                  <rect x="18.5" y="25" width="3" height="8" rx="1" fill="#0369A1"/>
                 </svg>
               </div>
               <div>
                 <span className="font-bold text-gray-900 text-lg">Nharire Intelligence</span>
-                <span className="block text-[11px] text-[#0B5D3B] font-bold tracking-wide uppercase">
+                <span className="block text-[11px] text-[#0284C7] font-bold tracking-wide uppercase">
                   A Nharire Data Group Company
                 </span>
               </div>
@@ -36,8 +36,8 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="pt-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0B5D3B] bg-[#DCFCE7] px-2.5 py-1 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0284C7] bg-[#E0F2FE] px-2.5 py-1 rounded-full border border-[#38BDF8]/20">
+                <span className="w-2 h-2 rounded-full bg-[#00D2FF] shadow-[0_0_6px_#00D2FF] animate-pulse" />
                 Transform Data Into Decisions.
               </span>
             </div>
@@ -50,32 +50,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   Data Intelligence
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   AI Analyst ("Ask Nharire")
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   Business Dashboards
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   Automated Reporting
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   Predictive Analytics
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/platform')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/platform')} className="hover:text-[#0284C7] transition-colors">
                   Data Profiling Engine
                 </button>
               </li>
@@ -89,32 +89,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Executive Intelligence
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Operational Analytics
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Retail &amp; FMCG Forecasting
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Agri-Logistics &amp; Cold Chain
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Mining &amp; Heavy Industry
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/solutions')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/solutions')} className="hover:text-[#0284C7] transition-colors">
                   Financial Underwriting
                 </button>
               </li>
@@ -128,32 +128,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <button onClick={() => navigate('/about')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/about')} className="hover:text-[#0284C7] transition-colors">
                   About Nharire Data Group
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/case-studies')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/case-studies')} className="hover:text-[#0284C7] transition-colors">
                   Case Studies
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/faq')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/faq')} className="hover:text-[#0284C7] transition-colors">
                   FAQ
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/contact')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/contact')} className="hover:text-[#0284C7] transition-colors">
                   Contact
                 </button>
               </li>
               <li>
-                <button onClick={() => navigate('/privacy-policy')} className="hover:text-[#0B5D3B] transition-colors">
+                <button onClick={() => navigate('/privacy-policy')} className="hover:text-[#0284C7] transition-colors">
                   Privacy Policy
                 </button>
               </li>
               <li className="pt-2 text-xs text-gray-500 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#0B5D3B]" />
+                <MapPin className="w-3.5 h-3.5 text-[#0284C7]" />
                 <span>Harare, Zimbabwe</span>
               </li>
             </ul>
@@ -172,8 +172,8 @@ export const Footer: React.FC = () => {
               Privacy Policy
             </button>
             <span>•</span>
-            <span className="flex items-center gap-1 text-[#0B5D3B] font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#16A34A]" />
+            <span className="flex items-center gap-1 text-[#0284C7] font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#0284C7]" />
               Sovereign African Cloud Security
             </span>
             <span>•</span>

@@ -71,7 +71,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Multi-tenant status card */}
         <div className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 space-y-2">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse" />
             <span className="text-[11px] font-semibold text-slate-200">Verified Analytics Active</span>
           </div>
           <p className="text-[10px] text-slate-400 leading-relaxed">

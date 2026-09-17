@@ -69,7 +69,7 @@ export const AboutPage: React.FC = () => {
 
         {/* Header Hero */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/30 text-[#0284C7] text-xs font-bold mb-4">
             <Building2 className="w-3.5 h-3.5" />
             <span>Nharire Data Group Heritage</span>
           </div>
@@ -85,7 +85,7 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           
           <div className="bg-white border border-[#E5E7EB] rounded-3xl p-8 sm:p-10 shadow-xs hover:shadow-lg transition-all">
-            <span className="text-xs uppercase tracking-widest text-[#0B5D3B] font-bold bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase tracking-widest text-[#0284C7] font-bold bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               Parent Entity
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-4 mb-3">
@@ -96,23 +96,23 @@ export const AboutPage: React.FC = () => {
             </p>
             <ul className="space-y-3 text-xs text-gray-600 border-t border-gray-100 pt-5">
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Headquartered in Harare, Zimbabwe with regional operations across Southern &amp; East Africa</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Dedicated to data sovereignty and regional cloud control</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Strict zero-leakage enterprise governance standards</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-white border-2 border-[#0B5D3B]/20 rounded-3xl p-8 sm:p-10 shadow-md hover:shadow-xl transition-all relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#DCFCE7]/60 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10" />
-            <span className="text-xs uppercase tracking-widest text-white font-bold bg-[#0B5D3B] px-3 py-1 rounded-full">
+          <div className="bg-white border-2 border-[#0284C7]/30 rounded-3xl p-8 sm:p-10 shadow-md hover:shadow-xl transition-all relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#38BDF8]/20 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10" />
+            <span className="text-xs uppercase tracking-widest text-white font-bold bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] px-3 py-1 rounded-full shadow-xs">
               Flagship SaaS Product
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-4 mb-3">
@@ -123,15 +123,15 @@ export const AboutPage: React.FC = () => {
             </p>
             <ul className="space-y-3 text-xs text-gray-600 border-t border-gray-100 pt-5">
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#0B5D3B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Deterministic calculations before LLM natural-language generation</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#0B5D3B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Native multi-currency and informal retail reconciliation</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#0B5D3B] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
                 <span>Multi-tenant workspace isolation with AES-256 encryption</span>
               </li>
             </ul>
@@ -142,7 +142,7 @@ export const AboutPage: React.FC = () => {
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div className="bg-white border border-[#E5E7EB] rounded-3xl p-8 sm:p-10 shadow-xs">
-            <div className="w-12 h-12 rounded-2xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-5">
+            <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-5">
               <Target className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
@@ -152,7 +152,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-white border border-[#E5E7EB] rounded-3xl p-8 sm:p-10 shadow-xs">
-            <div className="w-12 h-12 rounded-2xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-5">
+            <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-5">
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Our Vision</h3>
@@ -165,7 +165,7 @@ export const AboutPage: React.FC = () => {
         {/* African-first Technology Positioning */}
         <div className="bg-white border border-[#E5E7EB] rounded-3xl p-8 sm:p-12 mb-20 shadow-xs">
           <div className="max-w-3xl mb-10">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               Strategic Positioning
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-3">
@@ -178,7 +178,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-4">
                 <TrendingUp className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-gray-900 text-base mb-2">
@@ -190,7 +190,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-4">
                 <Layers className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-gray-900 text-base mb-2">
@@ -202,7 +202,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B] mb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7] mb-4">
                 <Lock className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-gray-900 text-base mb-2">
@@ -218,7 +218,7 @@ export const AboutPage: React.FC = () => {
         {/* Leadership & Engineering Team */}
         <div className="mb-20">
           <div className="max-w-3xl mb-10">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#0B5D3B] bg-[#DCFCE7] px-3 py-1 rounded-full">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#0284C7] bg-[#E0F2FE] border border-[#38BDF8]/30 px-3 py-1 rounded-full">
               People &amp; Expertise
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-3">
@@ -239,10 +239,10 @@ export const AboutPage: React.FC = () => {
                 <div>
                   {/* Clean Photography Placeholder adhering strictly to prompt */}
                   <div className="w-full h-48 bg-[#F8FAFC] border-b border-gray-100 flex flex-col items-center justify-center p-4 text-center">
-                    <div className="w-16 h-16 rounded-full bg-[#DCFCE7] border border-[#22C55E]/40 flex items-center justify-center text-[#0B5D3B] mb-2 shadow-xs">
+                    <div className="w-16 h-16 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/40 flex items-center justify-center text-[#0284C7] mb-2 shadow-xs">
                       <Users className="w-8 h-8" />
                     </div>
-                    <span className="text-[11px] font-mono text-[#0B5D3B] font-bold">
+                    <span className="text-[11px] font-mono text-[#0284C7] font-bold">
                       [{member.placeholderLabel}]
                     </span>
                     <span className="text-[10px] text-gray-400 mt-1">
@@ -255,7 +255,7 @@ export const AboutPage: React.FC = () => {
                     <h4 className="font-bold text-gray-900 text-base">
                       {member.name}
                     </h4>
-                    <div className="text-xs text-[#0B5D3B] font-semibold mb-1">
+                    <div className="text-xs text-[#0284C7] font-semibold mb-1">
                       {member.role}
                     </div>
                     <div className="text-[11px] text-gray-400 mb-3">
@@ -282,29 +282,30 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Ready to Engage Dark Green Section */}
-        <div className="bg-[#0B5D3B] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-xl">
-          <div>
-            <span className="text-xs uppercase font-bold tracking-widest text-[#22C55E] bg-[#08482e] px-3 py-1 rounded-full border border-[#22C55E]/20">
+        {/* Ready to Engage Cyber Navy Section */}
+        <div className="bg-[#0A1128] border border-[#1E293B] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-xl relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#00D2FF] bg-[#0F1D40] px-3 py-1 rounded-full border border-[#00D2FF]/30">
               Enterprise Partnership
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">
               Partner with Nharire Data Group
             </h3>
-            <p className="text-emerald-100/90 text-sm mt-2 max-w-xl">
+            <p className="text-sky-100/90 text-sm mt-2 max-w-xl">
               Discover how our sovereign intelligence platform can empower your enterprise operations and analytical teams.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto relative z-10">
             <button
               onClick={() => navigate('/platform')}
-              className="bg-white hover:bg-gray-100 text-[#0B5D3B] font-bold px-6 py-3 rounded-xl text-sm shadow transition-colors"
+              className="bg-white hover:bg-sky-50 text-[#0F172A] font-bold px-6 py-3 rounded-xl text-sm shadow-md shadow-[#00D2FF]/20 transition-colors"
             >
               Get Started
             </button>
             <button
               onClick={() => navigate('/contact')}
-              className="bg-[#08482e] hover:bg-[#063b25] text-white font-semibold px-6 py-3 rounded-xl text-sm border border-emerald-500/30 transition-colors"
+              className="bg-[#0F1D40] hover:bg-[#162752] text-white font-semibold px-6 py-3 rounded-xl text-sm border border-[#38BDF8]/40 transition-colors"
             >
               Talk to Us
             </button>

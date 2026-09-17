@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { RouterProvider, useRouter } from './context/RouterContext';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { MobileStickyCta } from './components/MobileStickyCta';
@@ -22,6 +23,7 @@ import { Organization, Workspace, Dataset } from './types';
 
 function AppContent() {
   const { currentPath } = useRouter();
+  const { theme } = useTheme();
 
   // Core Platform Data State
   const [organizations, setOrganizations] = useState<Organization[]>([]);
@@ -202,7 +204,13 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-amber-500/30 selection:text-amber-200">
+    <div
+      className={`min-h-screen flex flex-col antialiased transition-colors duration-200 ${
+        theme === 'dark'
+          ? 'bg-[#0A1128] text-slate-100 selection:bg-[#00D2FF]/30 selection:text-[#00D2FF]'
+          : 'bg-[#F8FAFC] text-[#111827] selection:bg-[#0284C7]/20 selection:text-[#0284C7]'
+      }`}
+    >
       {/* Top Universal Navbar */}
       <Navbar />
 
@@ -232,9 +240,11 @@ function AppContent() {
 
 export function App() {
   return (
-    <RouterProvider>
-      <AppContent />
-    </RouterProvider>
+    <ThemeProvider>
+      <RouterProvider>
+        <AppContent />
+      </RouterProvider>
+    </ThemeProvider>
   );
 }
 

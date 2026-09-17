@@ -126,7 +126,7 @@ export const SolutionsPage: React.FC = () => {
 
         {/* Hero Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCFCE7] border border-[#22C55E]/30 text-[#0B5D3B] text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E0F2FE] border border-[#38BDF8]/30 text-[#0284C7] text-xs font-bold mb-4">
             <Building2 className="w-3.5 h-3.5" />
             <span>Targeted Industry Architecture</span>
           </div>
@@ -146,18 +146,18 @@ export const SolutionsPage: React.FC = () => {
               <div
                 key={item.id}
                 id={item.id}
-                className="bg-white border border-[#E5E7EB] rounded-3xl p-6 sm:p-10 hover:shadow-xl transition-all"
+                className="bg-white border border-[#E5E7EB] rounded-3xl p-6 sm:p-10 hover:shadow-xl hover:border-[#38BDF8]/40 transition-all"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
                   {/* Left Column: Solution Identity & Context */}
                   <div className="lg:col-span-7 space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-[#DCFCE7] flex items-center justify-center text-[#0B5D3B]">
+                      <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] flex items-center justify-center text-[#0284C7]">
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <span className="text-[11px] uppercase tracking-wider font-bold text-[#0B5D3B]">
+                        <span className="text-[11px] uppercase tracking-wider font-bold text-[#0284C7]">
                           {item.tag}
                         </span>
                         <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">
@@ -176,8 +176,8 @@ export const SolutionsPage: React.FC = () => {
                         </p>
                       </div>
 
-                      <div className="bg-[#DCFCE7]/40 p-4 rounded-2xl border border-[#22C55E]/30">
-                        <div className="text-xs font-bold text-[#0B5D3B] uppercase tracking-wider mb-1">
+                      <div className="bg-[#E0F2FE]/60 p-4 rounded-2xl border border-[#38BDF8]/40">
+                        <div className="text-xs font-bold text-[#0284C7] uppercase tracking-wider mb-1">
                           The Nharire Intelligence Solution
                         </div>
                         <p className="text-xs text-gray-700 leading-relaxed">
@@ -191,7 +191,7 @@ export const SolutionsPage: React.FC = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600">
                         {item.features.map(feat => (
                           <div key={feat} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A] shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
                             <span>{feat}</span>
                           </div>
                         ))}
@@ -205,7 +205,7 @@ export const SolutionsPage: React.FC = () => {
                       <div className="text-[11px] uppercase font-bold text-[#6B7280] tracking-wider mb-2">
                         Demonstrated Commercial Impact
                       </div>
-                      <div className="text-base font-extrabold text-[#0B5D3B] leading-snug">
+                      <div className="text-base font-extrabold text-[#0284C7] leading-snug">
                         {item.impact}
                       </div>
                       <p className="text-[11px] text-gray-500 mt-2">
@@ -216,7 +216,7 @@ export const SolutionsPage: React.FC = () => {
                     <div className="pt-4 border-t border-gray-200 space-y-2.5">
                       <button
                         onClick={() => navigate('/contact')}
-                        className="w-full flex items-center justify-center gap-2 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold py-3 px-4 rounded-xl text-xs shadow-sm transition-all"
+                        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white font-bold py-3 px-4 rounded-xl text-xs shadow-sm transition-all"
                       >
                         <span>Talk to Us About {item.title}</span>
                         <ArrowRight className="w-4 h-4" />
@@ -237,29 +237,30 @@ export const SolutionsPage: React.FC = () => {
           })}
         </div>
 
-        {/* Custom Enterprise Solutions Callout: Dark Green #0B5D3B */}
-        <div className="bg-[#0B5D3B] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-xl">
-          <div className="max-w-2xl">
-            <span className="text-xs uppercase font-bold tracking-widest text-[#22C55E] bg-[#08482e] px-3 py-1 rounded-full border border-[#22C55E]/20">
+        {/* Custom Enterprise Solutions Callout: Cyber Navy #0A1128 */}
+        <div className="bg-[#0A1128] border border-[#1E293B] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-xl relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-2xl relative z-10">
+            <span className="text-xs uppercase font-bold tracking-widest text-[#00D2FF] bg-[#0F1D40] px-3 py-1 rounded-full border border-[#00D2FF]/30">
               Bespoke Engineering
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">
               Need a Custom African Enterprise Data Workflow?
             </h3>
-            <p className="text-emerald-100/90 text-sm mt-2 leading-relaxed">
+            <p className="text-sky-100/90 text-sm mt-2 leading-relaxed">
               Our engineering team deploys dedicated ingestion adapters, on-premise sovereign instances, and customized grounded LLM fine-tunings for high-compliance institutions.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto relative z-10">
             <button
               onClick={() => navigate('/contact')}
-              className="w-full sm:w-auto bg-white hover:bg-gray-100 text-[#0B5D3B] font-bold px-6 py-3.5 rounded-xl text-sm shadow-md transition-colors"
+              className="w-full sm:w-auto bg-white hover:bg-sky-50 text-[#0F172A] font-bold px-6 py-3.5 rounded-xl text-sm shadow-md shadow-[#00D2FF]/20 transition-colors"
             >
               Talk to Us
             </button>
             <button
               onClick={() => navigate('/platform')}
-              className="w-full sm:w-auto bg-[#08482e] hover:bg-[#063b25] text-white font-semibold px-6 py-3.5 rounded-xl text-sm border border-emerald-500/30 transition-colors"
+              className="w-full sm:w-auto bg-[#0F1D40] hover:bg-[#162752] text-white font-semibold px-6 py-3.5 rounded-xl text-sm border border-[#38BDF8]/40 transition-colors"
             >
               Get Started
             </button>

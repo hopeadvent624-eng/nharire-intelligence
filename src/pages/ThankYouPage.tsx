@@ -41,23 +41,23 @@ export const ThankYouPage: React.FC = () => {
         {/* Confirmation Card */}
         <div className="bg-white border border-[#E5E7EB] rounded-3xl p-8 sm:p-12 text-center shadow-lg relative overflow-hidden mb-12">
           {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#DCFCE7]/60 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#00D2FF]/20 blur-3xl pointer-events-none" />
 
           {/* Success Icon */}
-          <div className="w-16 h-16 rounded-2xl bg-[#DCFCE7] border border-[#22C55E]/40 flex items-center justify-center text-[#0B5D3B] mx-auto mb-6 shadow-xs">
+          <div className="w-16 h-16 rounded-2xl bg-[#E0F2FE] border border-[#38BDF8]/40 flex items-center justify-center text-[#0284C7] mx-auto mb-6 shadow-xs">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             {userName ? `Thank you, ${userName}.` : 'Thank you for reaching out.'}
           </h1>
-          <p className="text-[#0B5D3B] font-bold text-sm sm:text-base mt-2">
+          <p className="text-[#0284C7] font-bold text-sm sm:text-base mt-2">
             Your inquiry{userCompany ? ` for ${userCompany}` : ''} has been securely logged with the Nharire Intelligence desk.
           </p>
 
           {/* SLA Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F8FAFC] border border-gray-200 text-xs text-gray-700 mt-6 shadow-xs">
-            <Clock className="w-4 h-4 text-[#0B5D3B]" />
+            <Clock className="w-4 h-4 text-[#0284C7]" />
             <span>Response guarantee: <strong>We aim to respond within 1 business day.</strong></span>
           </div>
 
@@ -69,7 +69,7 @@ export const ThankYouPage: React.FC = () => {
 
             <div className="space-y-4 text-xs sm:text-sm text-gray-600">
               <div className="flex items-start gap-3 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-                <span className="w-6 h-6 rounded-full bg-[#DCFCE7] text-[#0B5D3B] font-bold flex items-center justify-center shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-[#E0F2FE] text-[#0284C7] font-bold flex items-center justify-center shrink-0 text-xs">
                   1
                 </span>
                 <div>
@@ -78,7 +78,7 @@ export const ThankYouPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-                <span className="w-6 h-6 rounded-full bg-[#DCFCE7] text-[#0B5D3B] font-bold flex items-center justify-center shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-[#E0F2FE] text-[#0284C7] font-bold flex items-center justify-center shrink-0 text-xs">
                   2
                 </span>
                 <div>
@@ -87,7 +87,7 @@ export const ThankYouPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3 bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200">
-                <span className="w-6 h-6 rounded-full bg-[#DCFCE7] text-[#0B5D3B] font-bold flex items-center justify-center shrink-0 text-xs">
+                <span className="w-6 h-6 rounded-full bg-[#E0F2FE] text-[#0284C7] font-bold flex items-center justify-center shrink-0 text-xs">
                   3
                 </span>
                 <div>
@@ -101,7 +101,7 @@ export const ThankYouPage: React.FC = () => {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               onClick={() => navigate('/platform')}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B5D3B] hover:bg-[#08482e] text-white font-bold px-6 py-3.5 rounded-xl text-sm shadow-sm transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] hover:from-[#0369A1] hover:to-[#1E40AF] text-white font-bold px-6 py-3.5 rounded-xl text-sm shadow-sm transition-all"
             >
               <span>Explore Live Platform Workbench</span>
               <ArrowRight className="w-4 h-4" />
@@ -127,8 +127,8 @@ export const ThankYouPage: React.FC = () => {
               onClick={() => navigate('/case-studies')}
               className="bg-white border border-[#E5E7EB] rounded-3xl p-6 text-left hover:shadow-lg transition-all group"
             >
-              <div className="text-xs font-bold text-[#0B5D3B] mb-1">Evidence &amp; ROI</div>
-              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0B5D3B] transition-colors">
+              <div className="text-xs font-bold text-[#0284C7] mb-1">Evidence &amp; ROI</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0284C7] transition-colors">
                 Zambezi Retail &amp; Logistics Case Study
               </h3>
               <p className="text-xs text-gray-500 leading-relaxed">
@@ -140,8 +140,8 @@ export const ThankYouPage: React.FC = () => {
               onClick={() => navigate('/platform')}
               className="bg-white border border-[#E5E7EB] rounded-3xl p-6 text-left hover:shadow-lg transition-all group"
             >
-              <div className="text-xs font-bold text-[#0B5D3B] mb-1">Architecture</div>
-              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0B5D3B] transition-colors">
+              <div className="text-xs font-bold text-[#0284C7] mb-1">Architecture</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0284C7] transition-colors">
                 Grounded Zero-Hallucination AI
               </h3>
               <p className="text-xs text-gray-500 leading-relaxed">
@@ -153,8 +153,8 @@ export const ThankYouPage: React.FC = () => {
               onClick={() => navigate('/about')}
               className="bg-white border border-[#E5E7EB] rounded-3xl p-6 text-left hover:shadow-lg transition-all group"
             >
-              <div className="text-xs font-bold text-[#0B5D3B] mb-1">Heritage &amp; Vision</div>
-              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0B5D3B] transition-colors">
+              <div className="text-xs font-bold text-[#0284C7] mb-1">Heritage &amp; Vision</div>
+              <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-[#0284C7] transition-colors">
                 About Nharire Data Group
               </h3>
               <p className="text-xs text-gray-500 leading-relaxed">

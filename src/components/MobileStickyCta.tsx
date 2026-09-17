@@ -16,7 +16,7 @@ export const MobileStickyCta: React.FC = () => {
       <div className="flex items-center gap-2 max-w-md mx-auto">
         <button
           onClick={() => navigate('/platform')}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#0B5D3B] text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-md active:scale-98 transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#0284C7] to-[#1D4ED8] text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-md active:scale-98 transition-transform"
         >
           <span>Get Started</span>
           <ArrowRight className="w-4 h-4" />
@@ -26,7 +26,7 @@ export const MobileStickyCta: React.FC = () => {
           onClick={() => navigate('/contact')}
           className="flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-gray-700 bg-gray-100 border border-gray-200 active:scale-98 transition-transform whitespace-nowrap"
         >
-          <MessageSquare className="w-3.5 h-3.5 text-[#0B5D3B]" />
+          <MessageSquare className="w-3.5 h-3.5 text-[#0284C7]" />
           <span>Talk to Us</span>
         </button>
 
